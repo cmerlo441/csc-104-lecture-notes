@@ -1,0 +1,88 @@
+% !TEX root = CSC104LectureNotes.tex
+
+% \setcounter{chapter}{14}
+\chapter{Strings and Numeric Types, and Writing a First Python Script}
+\label{day:firstscript}
+
+\topquote{I'm not a great programmer; I'm just a good programmer with great habits.}{Kent Beck}
+
+\minitoc
+
+\section{Strings}
+
+You will learn after reading Chapter 3 of the zyBooks textbook that a string is a sequence of characters, and that we can do some interesting processing with the string as a whole, and its individual components as well.  After reading the chapter and completing the Participation Activities, you will be able to find the length of a string, compose a big string out of smaller strings, and determine which characters are in which places in a string.
+
+\section{Numeric Types}
+
+There are two types of real numbers in Python, \mintinline{python}{float} and \mintinline{python}{int}, which store different kinds of data and support different kinds of processing.  Understanding the similarities and differences will help you not just with today's work, but with many of the tasks you will have to complete this semester.
+
+\section{Writing a Python Script}
+
+In today's class, you will be given a new kind of homework assignment.  You will be tasked with writing a Python script and submitting it for grading.  This assignment is not a zyLabs assignment, and you won't receive automated feedback like you do from zyLabs.  Instead, you will write and test this script in IDLE, make sure for yourself that it works, and then submit it to your instructor for grading.  As the semester goes on, you will have more and more assignments like this.
+
+It is, of course, of critical importance that the script you submit performs the right task.  However, we programmers demand more of ourselves than that.  Program code must also be easily read by humans.  As much as our source code conveys information to the computer, it must also convey information to us.  Therefore, it's a good idea to agree upon a standard way for our code to be formatted, so that we can see this information easily.
+
+\section{The Header}
+\label{sec:header}
+
+While there is general consensus among the Python community, and the programming community generally, about what information should appear at the top of a source code file, there does not appear to be one standard regarding \textit{how} this information should be presented.  Presented here is the standard we will use, based upon commonly-used ideas and guidelines.
+
+\subsection{The Shebang}
+\label{sec:shebang}
+
+The idea of ``scripting'', or ``writing scripts'', has been around longer than Python has, and in fact has been around longer than Microsoft Windows has.  Among the earliest kind of scripts are what are now referred to as ``shell scripts'', because they are sets of instructions for the \addindex{Command shell}{command shell}, or the interactive program that waits for the computer's user to type in commands.  In the earliest days of the Unix operating system, before graphical user interfaces, all of the instructions to the computer had to be typed at the shell.\footnote{The command shell in Unix is very powerful, and many programmers continue to choose to work with it rather than clicking things.}
+
+\index{"\#"!@\texttt{"\#"!}} Unix users started writing scripts as a way to automate the stuff they had to type repeatedly to accomplish tasks.  These scripts need to start with a \addindex{Shebang}{shebang} to signal to Unix how to process the script.  The shebang consists of a ``sharp'' symbol (think music notation -- it's the \texttt{\#}) followed by a ``bang'' symbol, a programmer's shorthand for the \texttt{!} symbol.  A sharp and a bang together came to be known as a shebang.\footnote{Unix users have all sorts of fun names for things.  See Eric Raymond's Jargon File at \url{http://catb.org/jargon/html/}.}
+
+A typical ``shell script'', therefore, would have a first line something like this:
+
+\begin{verbatim}
+#! /usr/bin/sh
+\end{verbatim}
+
+This tells Unix to use the program \texttt{sh}, located in the \texttt{/usr/bin} directory, to process the script.  Since we're working in Python, our shebang should look more like this:
+
+\begin{verbatim}
+#! /usr/bin/env python3
+\end{verbatim}
+
+This tells your Unix system to use the \texttt{env} program to figure out where Python 3 is installed, and use it to process the script.
+
+You might be wondering at this point, if the shebang is a Unix thing, what effect it has on a Python script running on Microsoft Windows.  The developers of Python knew that people would want to run Python scripts on Windows, and so configured Python on Windows to safely ignore this line.  Therefore, you should provide a shebang at the top of every Python script.
+
+\subsection{The Docstring}
+\label{section:docstring}
+
+Every Python script and module -- and certain program components that we will explore later -- should contain a \addindex{Docstring}{docstring} that provides a description of the code that follows.
+
+While it is possible to fit a docstring on a single line, this is not the accepted standard for a script or a module.  We should include a multi-line docstring instead.
+
+A docstring is really just a string, except that it starts and ends with \textit{three quote symbols} instead of one, like this:
+
+\begin{minted}{python}
+'''This is a docstring.
+
+This is part of the same docstring.
+'''
+\end{minted}
+
+While the Python specification \href{https://www.python.org/dev/peps/pep-0257/#multi-line-docstrings}{PEP 257} provides the most rigorous description of what to include in a docstring at the top of a script, we shall summarize it here:  The first line should contain a brief summary of the code, and then, following a blank line, the rest should consist of a more elaborate description.  If the script or module you're creating is part of an assignment, include the due date in the description.  The top of the Hello World script might, therefore, contain this after the shebang:
+
+\begin{minted}{python}
+'''Display a friendly message.
+
+Display a friendly "Hello World" message to the user,
+confirming that the computer's Python installation is in good
+working order.
+
+This script is part of Homework #1, due 2019-09-09.
+'''
+\end{minted}
+
+\subsection{The Rest of the Header}
+
+We shall define three special variables after the docstring (although in production code there are generally many more than these).  Assign the variable \mintinline{python}{__author__} a string containing your name, assign \mintinline{python}{__section__} a string containing the section of the class you're enrolled in, and assign \mintinline{python}{__email__} a string containing your email address.
+
+% A complete Hello World script should, therefore, look like Code Listing \ref{lst:hwheader} on Page \pageref{lst:hwheader}.
+
+\pyfile{Hello World With a Full Header}{hello-with-author-email.py}{hwheader}

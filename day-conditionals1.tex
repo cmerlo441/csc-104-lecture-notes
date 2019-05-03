@@ -1,0 +1,45 @@
+% !TEX root = CSC104LectureNotes.tex
+
+\setcounter{chapter}{5}
+\chapter{Introduction to Conditionals}
+\label{day:conditionals1}
+
+\topquote{If you don't know anything about computers, just remember that they are machines that do exactly what you tell them but often surprise you in the result. }{Richard Dawkins}
+
+\minitoc
+
+\section{Decisions}
+
+Life is full of decisions.  Some decisions, like \textit{should I change my major to Computer Science?}{} are very important, whereas others, like \textit{should we go to Wendy's or Taco Bell for lunch?}{} only seem important at the time.
+
+The earliest computer programmers faced decisions as well.  Should this employee be paid a straight wage, or overtime?  Is this user's input valid?  Computers were designed to be good at handling decision making like this.
+
+\section{Conditions and Boolean Values}
+
+A \addindex{Condition}{condition} is something that is either true or false.  \textit{It is cold out} is a condition -- you can determine for yourself as you read this whether that statement is true or false right now.  In a few hours, or a few months, it is possible for this condition to have the opposite value.
+
+As we start to discuss how to write computer programs, the conditions with which we will deal most frequently will involve \textit{comparisons}.  We will learn how to ask questions like ``Are you older than 21 years old?,'' and how to perform different tasks based on the possible outcomes.
+
+English mathematician George Boole is usually credited with first formalizing the way we write about conditions and comparisons.  His system came to be known as \textit{Boolean logic}.  Similariy, the values \texttt{False} and \texttt{True} -- the only two values a condition in Boolean logic can have -- are referred to as \textit{Boolean values}.  \texttt{False} and \texttt{True} are the only two Boolean values.
+
+Today's lesson will focus on the use of \addindex{Operators!Relational operators}{relational operators}, which help us create a condition that examines the relationship between two values.  These operators help us talk about ideas like ``this number is less than that number,'' or ``this number is greater than or equal to that number.''
+
+In math class, you may have encountered statements like $x \ge y$, which means ``$x$ is greater than or equal to $y$.''  This is difficult to type, however, because there is no $\ge$ key on your keyboard.  Every programming language defines a set of operators that programmers must type to express these otherwise-untypeable ideas.  Table \ref{tab:relational} presents the relational operators you will need to know when we start programming in Python.
+
+\begin{mytable}[label=tab:relational]{Relational Operators in Python}
+        \begin{tabulary}{\linewidth}{ccc}
+            Mathematical Symbol & Meaning & Python Code\\
+            \hline
+            $<$ & Less Than & \texttt{<}\\
+            $\le$ & Less Than or Equal & \texttt{<=}\\
+            $>$ & Greater Than & \texttt{>}\\
+            $\ge$ & Greater Than or Equal & \texttt{>=}\\
+            $=$ & Equal & \texttt{==}\\
+            $\neq$ & Not Equal & \texttt{!=}\\
+            \hline
+        \end{tabulary}
+\end{mytable}
+
+As you work through the examples today and over the next few days of class, make sure you use the Python operators, not the mathematical operators.  You will use these operators today while you learn the format for a \addindex{Statement!Conditional}{conditional statement} and how to create your own.  In later lessons you will write increasingly complex conditional statements.
+
+While writing and testing conditional statements, make sure you pay attention to the idea of a \textbf{\textit{possible value}} to be evaluated in a condition (this is the number you will compare to the \textit{present state} of something), and make sure you understand how to determine the possible \textbf{\textit{outcomes}} of a conditional statement.

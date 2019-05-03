@@ -1,0 +1,205 @@
+% !TEX root = CSC104LectureNotes.tex
+
+\newcommand{\mO}{\textbf{\textcolor{mLightGreen}{O}}}
+\newcommand{\mX}{\textbf{\textcolor{mLightBrown}{X}}}
+
+\setcounter{chapter}{2}
+\chapter{Matrix Logic}
+
+\topquote{Unfortunately, no one can be told what the Matrix is. You have to see it for yourself.}{Morpheus}
+
+\minitoc
+
+\section{What Is Matrix Logic?}
+
+It can be hard to know how to solve a problem that has multiple elements and multiple possibilities.  Part of the transition into thinking like a programmer involves the ability to organize information and eliminate impossibilities in a systematic way.  A \addindex{Matrix}{matrix} helps us set up a one-to-one correspondence among the elements in a problem.
+
+\section{Example Matrix Problem}
+
+\textbf{The problem statement:} Three friends, Sarah, Natalie, and Charlotte, all had dates on Saturday night, with Nick, Matt, and Ben.  One couple went to the movies, one went to the park, and one went out to dinner.  Based on these text messages, see if you can determine who went out with whom, and where they went.
+
+\begin{minipage}{\textwidth}
+\textbf{The clues:}\\
+
+\begin{tcolorbox}[width=\textwidth,colback=black!10]
+5:45\\
+Can't believe how cold it is and the grass is all wet, yuck. It's okay though, Matt gave me his coat, I think he really likes me.\\
+
+8:34\\
+Hey guys, hope you're having a better time than I am. Ben is such a bore, I don't think I'll be doing this again. xoxoxo love, Sarah oxoxox\\
+
+9:24\\
+Wow, this movie is fantastic and he's just as into it as I am. I don't think it'd ever be as fun with a geek like Matt (no offence). I don't ever want this to end. Good luck on your dates, love Natalie
+\end{tcolorbox}
+\end{minipage}
+
+\textbf{The strategy:}  Did Sarah go out with Ben?  Did Natalie go to the park?  We need a system of solving this problem that helps us eliminate the combinations that couldn't have happened, so that we leave only the one solution that makes sense.
+
+For a problem like this, the best strategy is to create a \textbf{matrix} like this:
+
+\begin{myfigure}[label=fig:datesmatrix]{Dates Problem Matrix}
+    \begin{tcolorbox}[width=\textwidth,colback=black!10]
+        \begin{center}
+            \begin{tabular}{r|c|c|c||c|c|c|}
+                & Nick & Matt & Ben & Movies & Park & Dinner\\
+                \hline\hline
+                Sarah & & & & & & \\
+                \hline
+                Natalie & & & & & &\\
+                \hline
+                Charlotte & & & & & & \\
+                \hline\hline
+                Movies & & & \\
+                \cline{1-4}
+                Park & & & \\
+                \cline{1-4}
+                Dinner & & &\\
+                \cline{1-4}
+            \end{tabular}
+        \end{center}
+    \end{tcolorbox}
+\end{myfigure}
+
+Some of the clues in a problem like this help us match two pieces of information.  We will place a capital letter \mO{} where we have a match.  Read the first text message again.  We don't know who sent it, but we know she's in the park with Matt, so we can update the matrix like this:
+
+\begin{tcolorbox}[width=\textwidth,colback=black!10]
+    \begin{center}
+        \begin{tabular}{r|c|c|c||c|c|c|}
+            & Nick & Matt & Ben & Movies & Park & Dinner\\
+            \hline\hline
+            Sarah & & & & & & \\
+            \hline
+            Natalie & & & & & &\\
+            \hline
+            Charlotte & & & & & & \\
+            \hline\hline
+            Movies & & & \\
+            \cline{1-4}
+            Park & & \mO{} & \\
+            \cline{1-4}
+            Dinner & & &\\
+            \cline{1-4}
+        \end{tabular}
+    \end{center}
+\end{tcolorbox}
+
+Once we've placed the O, it becomes clear that neither Nick nor Ben is at the park, and that Matt is neither at the movies nor at dinner.  We can mark these impossibilities with an \mX{}, like this:
+
+\begin{tcolorbox}[width=\textwidth,colback=black!10]
+    \begin{center}
+        \begin{tabular}{r|c|c|c||c|c|c|}
+            & Nick & Matt & Ben & Movies & Park & Dinner\\
+            \hline\hline
+            Sarah & & & & & & \\
+            \hline
+            Natalie & & & & & &\\
+            \hline
+            Charlotte & & & & & & \\
+            \hline\hline
+            Movies & & \mX{} & \\
+            \cline{1-4}
+            Park & \mX{} & \mO{} & \mX{} \\
+            \cline{1-4}
+            Dinner & & \mX{} &\\
+            \cline{1-4}
+        \end{tabular}
+    \end{center}
+\end{tcolorbox}
+
+The second text message tells us that Sarah is out with Ben.  This means that Sarah is not with Nick or Matt, and that Ben is not with Natalie or Charlotte:
+
+\begin{tcolorbox}[width=\textwidth,colback=black!10]
+    \begin{center}
+        \begin{tabular}{r|c|c|c||c|c|c|}
+            & Nick & Matt & Ben & Movies & Park & Dinner\\
+            \hline\hline
+            Sarah & \mX{} & \mX{} & \mO{} & & & \\
+            \hline
+            Natalie & & & \mX{} & & &\\
+            \hline
+            Charlotte & & & \mX{} & & & \\
+            \hline\hline
+            Movies & & \mX{} & \\
+            \cline{1-4}
+            Park & \mX{} & \mO{} & \mX{} \\
+            \cline{1-4}
+            Dinner & & \mX{} &\\
+            \cline{1-4}
+        \end{tabular}
+    \end{center}
+\end{tcolorbox}
+
+But there's more information to glean from this clue.  Since we already know that Ben is not at the park, then neither is Sarah, and so we can eliminate that possibility as well:
+
+\begin{tcolorbox}[width=\textwidth,colback=black!10]
+    \begin{center}
+        \begin{tabular}{r|c|c|c||c|c|c|}
+            & Nick & Matt & Ben & Movies & Park & Dinner\\
+            \hline\hline
+            Sarah & \mX{} & \mX{} & \mO{} & & \mX{} & \\
+            \hline
+            Natalie & & & \mX{} & & &\\
+            \hline
+            Charlotte & & & \mX{} & & & \\
+            \hline\hline
+            Movies & & \mX{} & \\
+            \cline{1-4}
+            Park & \mX{} & \mO{} & \mX{} \\
+            \cline{1-4}
+            Dinner & & \mX{} &\\
+            \cline{1-4}
+        \end{tabular}
+    \end{center}
+\end{tcolorbox}
+
+From the third text message, we learn that Natalie is at the movies.  Since Ben is out with Sarah, and Matt is at the park, Natalie must be out with Nick.
+
+\begin{tcolorbox}[width=\textwidth,colback=black!10]
+    \begin{center}
+        \begin{tabular}{r|c|c|c||c|c|c|}
+            & Nick & Matt & Ben & Movies & Park & Dinner\\
+            \hline\hline
+            Sarah & \mX{} & \mX{} & \mO{} & & \mX{} & \\
+            \hline
+            Natalie & \mO{} & \mX{} & \mX{} & \mO{} & \mX{} & \mX{} \\
+            \hline
+            Charlotte & \mX{} & & \mX{} & & & \\
+            \hline\hline
+            Movies & \mO{} & \mX{} & \\
+            \cline{1-4}
+            Park & \mX{} & \mO{} & \mX{} \\
+            \cline{1-4}
+            Dinner & & \mX{} &\\
+            \cline{1-4}
+        \end{tabular}
+    \end{center}
+\end{tcolorbox}
+
+We are just about done with this problem at this point.  Notice that in the lower left, once the \mX{}'s are filled at Nick/Dinner and at Ben/Movies, it's clear that Ben is at Dinner, which means that Sarah is at dinner.  Similarly, with two \mX{}'s under Park in the top right, it must be Charlotte at the park, which means that that first text message, about Matt, was from her.
+
+\begin{tcolorbox}[width=\textwidth,colback=black!10]
+    \begin{center}
+        \begin{tabular}{r|c|c|c||c|c|c|}
+            & Nick & Matt & Ben & Movies & Park & Dinner\\
+            \hline\hline
+            Sarah & \mX{} & \mX{} & \mO{} & \mX{} & \mX{} & \mO{} \\
+            \hline
+            Natalie & \mO{} & \mX{} & \mX{} & \mO{} & \mX{} & \mX{} \\
+            \hline
+            Charlotte & \mX{} & \mO{} & \mX{} & \mX{} & \mO{} & \mX{} \\
+            \hline\hline
+            Movies & \mO{} & \mX{} & \mX{} \\
+            \cline{1-4}
+            Park & \mX{} & \mO{} & \mX{} \\
+            \cline{1-4}
+            Dinner & \mX{} & \mX{} & \mO{} \\
+            \cline{1-4}
+        \end{tabular}
+    \end{center}
+\end{tcolorbox}
+
+And so: Sarah and Ben are at dinner, Natalie and Nick are at the movies, and Charlotte and Matt are at the park.
+
+\section{Matrix Logic Exercises and Homework}
+
+You will have the opportunity to solve a couple of problems like this in class.  Answers to the last one should be submitted for homework.

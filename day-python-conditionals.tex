@@ -1,0 +1,58 @@
+% !TEX root = CSC104LectureNotes.tex
+
+% \setcounter{chapter}{15}
+\chapter{Python Conditionals}
+
+\topquote{Truth can only be found in one place: the code.}{Robert C. Martin}
+
+\minitoc
+
+\section{Review: Conditional Statements}
+
+If you've already forgotten everything you learned last month about conditional statements, it is probably best for you to go back to Day \ref{day:conditionals1} and re-read those sections.
+
+\section{Python Conditionals}
+\label{sec:pythonconditionals}
+
+The material from earlier this semester will have you well-prepared to handle writing if statements in Python.  You already know how to identify the possible values and outcomes of a condition, and you largely already know how to write an if statement in Python.  As you read through Chapter 3 in zyBooks, there is very little new information to be gleaned.  Most importantly, pay attention to these items:
+
+\subsection{Write Real Statements}
+Where we previously wrote \textit{pseudocode} like this:
+
+\begin{verbatim}
+if major = CS:
+    "You're a CS major"
+elif major = IT:
+    "You're an IT major"
+else:
+    "Your major is something else"
+\end{verbatim}
+
+The idea is there, but there are portions in that example that are not proper Python and won't compile.
+
+\subsubsection{Relational Operators}
+
+Recall that in Python, the \texttt{=} operator is used only for assignment.  When comparing two values in Python, we must use the \mintinline{python}{==} operator.
+
+\subsubsection{String Literals}
+
+When determining whether a variable like \mintinline{python}{major} contains a value like ``CS'', that value must either be stored in a variable already, or surrounded by double quotes.
+
+\subsubsection{Displaying Output}
+
+Before the first exam, it was enough to just write ``You're a CS major''.  Now, however, you've learned how to make a Python program display a string, so make sure to get that right.
+
+\subsection{Indentation}
+
+You will read about indentation in Chapter 3, but the important detail here is that you \textbf{\textit{must be consistent}} in how you use indentation.  Every statement at the same logical level must start in the same column of code.  For this reason, most Python programmers recommend that you indent four spaces at a time.
+
+Therefore, the previous example should look like this in Python:
+
+\begin{minted}{python}
+if major == "CS":
+    print("You're a CS major")
+elif major == "IT":
+    print("You're an IT major")
+else:
+    print("Your major is something else")
+\end{minted}

@@ -1,0 +1,128 @@
+% !TEX root = CSC104LectureNotes.tex
+
+\setcounter{chapter}{1}
+\chapter{Talking Like a Programmer}
+\label{day:vocabulary}
+
+\topquote{It's all talk until the code runs.}{Ward Cunningham}
+
+\minitoc
+
+\section{Interview Question}
+
+Your professor will give you a challenge regarding the crossing of a rope bridge.  Remember -- what's most important is that you make a guess, even if it isn't right.  A ``bad'' guess can help lead to the correct answer!
+
+\section{Vocabulary}
+
+Some people think, when they hear programmers talk, that they're speaking a foreign language.  Hopefully, today's lesson will help familiarize you with some of the jargon we use.  If you're going to do programming, it's important that you understand the spoken language that will be used, so that you can converse with the people you'll be working among.
+
+\subsection{What Is a Computer Program?}
+
+A \addindex{Program!Definition}{computer program} consists of a series of instructions that we humans write, using a vocabulary that the computer can understand.  When the computer \textit{executes}, or runs, our instructions, it will do so exactly as they are written, and so it's important that we write these instructions using the right language, in the right order, and without any ambiguity.
+
+A person who is in the process of creating a program is said to be engaged in \addindex{Program!Programming}{computer programming}.  But programming isn't just the act of typing stuff on a keyboard; it also involves \textbf{testing} the program to see whether it works, and then \textbf{debugging}, or removing the problems we've programmed in.
+
+\subsection{What Is an Algorithm?}
+
+This leaves us with the question of what to type in.  How do we know which instructions to give to the computer?
+
+The process of programming starts with designing an algorithm.  An \addindex{Algorithm}{algorithm} is a set of instructions that can be used repeatedly to solve a problem.  You probably have some algorithms you follow every day, like preparing breakfast or walking to class from the parking lot.  You could probably sit at home and describe to another student over the phone how to walk to the B building from where you normally park.  Some important characteristics of algorithms are that they're \textbf{repeatable} and \textbf{describable} to another person.
+
+A programmer, then, describes an algorithm to a computer, by writing instructions in the computer's language.
+
+\subsection{What's In a Computer?}
+
+Most modern computers, whether on your desk or in your pocket, have these components:
+\subsubsection{Central Processing Unit}
+The \index{CPU|see {Central Processing Unit}}\addindex{Central Processing Unit}{central processing unit}, or \textbf{CPU}, is the part of the computer that performs all of the instructions we write.  It keeps track of what instruction needs to be performed next, and makes sure the right things show up on the screen and get stored in memory.  CPUs are frequently measured by how many billions of operations they can perform in a second, using the unit of measurement \textit{gigahertz} (GHz).
+
+\subsubsection{Memory}
+\label{sec:memory}
+The computer's \addindex{Memory}{memory}, also called \textit{primary storage}, stores programs until they're ready to be run, and it also stores data and information that programs need while they run.  When you learn about \textit{variables} later, you will learn that they get stored here.
+
+We measure the capacity of a computer's memory in \textit{gigabytes}, or how many billions of bytes it can store.  In a typical desktop computer, the memory used by programs (\textit{RAM}, or \textit{random access memory}) only works when there's a constant supply of electricity; if the computer loses power, the memory will be emptied.
+
+\subsubsection{Drives, Disks, and Long-Term Storage}
+There are many kinds of \textit{secondary storage} available for various kinds of computers.  They are frequently refered to as \addindex{Hard Drive}{hard drives} or \textit{disks}, although these terms don't apply to some of the newest choices.  Whether they use old-fashioned spinning platters or not, however, they are used to store lots of data for a long time, including when the computer is off.  Hard drives are used to store our programs when they're not in use, and our files, like term papers, saved game progress, and songs.
+
+\subsubsection{Input and Output}
+Keyboards, screens, mice, speakers, and similar devices allow us to \addindex{Input}{input} information into the computer, and allow the computer to \addindex{Output}{output} information back to us.  Computers can work just fine without these devices, but not in an interactive way.
+
+\subsection{Kinds of Programming Errors}
+\label{sec:kindsoferrors}
+
+There are three broad categories of errors that can exist in a computer program.  The first is an error in the structure of our instructions, and the second is an error in the logic of our instructions.  (The third is an error in the execution of our instructions, but we'll talk about these kinds of errors later.)
+
+A \addindex{Error!Syntax error}{syntax error} is an error that arises when we programmers type something that does not follow the structural rules of the programming language in which we're writing.  Consider a similar error in a natural language.  What's wrong with this English sentence?
+
+\begin{myfigure}[label=fig:syntax-error-in-English]{A syntax error in English}
+    \begin{tcolorbox}[floatplacement=h,width=\textwidth,colback=black!10]
+        \centering
+        \textbf{\textit{\large{This sentence no verb.}}}
+    \end{tcolorbox}
+\end{myfigure}
+
+The problem there is that we broke the rules of English -- specifically, the rule that says a sentence has to have a verb.
+
+Now consider this sentence:
+
+\begin{myfigure}[label=fig:semantic-error-in-English]{A semantic error in English}
+    \begin{tcolorbox}[floatplacement=h,width=\textwidth,colback=black!10]
+        \centering
+        \textbf{\textit{\large{My dog drove me to school today.}}}
+    \end{tcolorbox}
+\end{myfigure}
+
+The structure of this sentence is valid.  A grammarian would have no problem with this sentence.  A logician, however, would bristle at this, because it doesn't make any sense.  The sentence in Figure \ref{fig:semantic-error-in-English} doesn't contain any syntax errors, but it does contain an error.  Specifically, this sentence has a \addindex{Error!Semantic error}{semantic error}, which is an error in the logic or meaning of a statement.
+
+\subsection{How the Computer Reads Our Instructions}
+
+Certainly we humans don't communicate with each other using computer programming languages, and so when we write programs, we're performing a sort of translation, or interpretation, of our algorithm into that language.  You may be surprised, however, to learn that even a programming language is not a computer's native language.  The only language the computer natively understands is numerical in nature -- instruction 1 might mean ``add these two numbers,'' and instruction 2 might mean ``compare these two numbers, and store the result over here.''  Therefore, we need a program to translate our computer programming language instructions -- which we call \addindex{Source code}{source code} -- into machine language instructions.  There are two ways this can happen.
+
+Some languages utilize a program called a \addindex{Compiler}{compiler}, which examines all of our source code at once.  If all of the source code is free of syntax errors, the compiler will then translate the entire program to machine language code.  The code that comes from the compiler is saved on disk, and can be run multiple times without having to be compiled again.  Other languages' source code is fed into an \addindex{Interpreter}{interpreter}, which attempts to execute each instruction of a program separately.  An interpreter can run some of a program, even if there's a syntax error somewhere in the middle; however, once a syntax error is encountered, the interpreter will immediately exit.
+
+The language we will be programming in this semester, called Python, is a compiled language, but the resulting code is not machine code.  Instead, the Python compiler creates something called \addindex{Bytecode}{bytecode}, which then must be run by an interpreter.
+
+\section{Three Fundamental Components of a Program}
+
+There are three basic kinds of instructions that we programmers can write when implementing our algorithms in computer code.
+
+\subsection{Sequential Statements}
+
+It's important for some instructions to take place in a certain order.  When you're making breakfast, you can't put your knife in the preserves jar if you haven't taken the lid off first.  \addindex{Statement!Sequential}{Sequential statements} must be typed in in the proper order when necessary.
+
+\subsection{Selection Statements}
+
+Did you plug in your mobile phone when you got to class today?  Why?  Is there a certain threshold of battery percentage at which you worry about it lasting through class?  We can write certain instructions for the computer to select what to do, based upon a condition.  \addindex{Statement!Selection}{Selection statements} (also known as \addindex{Statement!Conditional}{conditional statements}) allow us to allow the computer to make a decision.  We'll explore those more in a few weeks.  \index{Conditional statement|see {Statement}}
+
+\subsection{Iteration Statements}
+
+How was parking today?  Did you have to drive in circles around a section of the parking lot?  Any repeated action like that is called \textit{iteration} by programmers, and so an \addindex{Statement!Iteration}{iteration statement} is the kind of instruction we write when we want some task to happen over and over again.
+
+\section{Programming Ethics}
+
+From time to time in this course, we will discuss the responsibilities we programmers have to the people whose lives our work might affect.  The \href{https://www.acm.org/code-of-ethics}{Code of Ethics} published by the \href{https://www.acm.org/}{Association for Computing Machinery} is a resource that is widely accepted throughout the computing industry, and one to which all of us that teach Computer Science and Information Technology here at Nassau subscribe.
+
+\subsection{General Principles}
+
+The first part of the Code of Ethics lists a programmer's General Principles.  Our first principle is this:
+
+\begin{tcolorbox}[width=\textwidth,colback=black!10]
+Contribute to society and to human well-being, acknowledging that all people are stakeholders in computing.  [\href{https://www.acm.org/code-of-ethics#h-1.1-contribute-to-society-and-to-human-well-being,-acknowledging-that-all-people-are-stakeholders-in-computing.}{direct link}]
+\end{tcolorbox}
+
+This principle affirms our responsibility to use our talents for the benefit of society.  It is not only easy, but far too common, for people, organizations, and corporations to forget this principle and, either through mistakes or through overt acts, create software and computer systems that do not benefit society, and potentially even cause harm to people or computers.  Computers -- and, by extension, programmers -- have changed the world for the better, but we must always strive to maintain the trust that society has placed in us.
+
+\section{Writing and Following Directions Exercise}
+
+Your instructor is going to ask you and a partner to write some instructions, but with some restrictions.  Then we will see how you did.
+
+\section{Homework}
+
+Ted and Ken, and their wives Allyson and Janie each have a favorite sport.  The sports they enjoy are running, swimming, biking, and golf.  Based upon these clues, determine whose favorite sport is which, and submit the answer as homework.
+\begin{enumerate}
+\item Ted hates golf.
+\item Ken wouldn't run around the block if he didn't have to, and neither would his wife.
+\item Each woman's sport is featured in a triathlon.
+\item Allyson bought her husband a new bicycle for his birthday, to use in his favorite sport.
+\end{enumerate}

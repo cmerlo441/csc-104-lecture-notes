@@ -1,0 +1,41 @@
+% !TEX root = CSC104LectureNotes.tex
+
+\chapter{Binary Numbers}
+
+\topquote{There are 10 kinds of people in this world -- those who understand binary numbers, and those who don't.}{A progammer's t-shirt}
+
+\minitoc
+
+\section{Review Exercise}
+\label{sec:syslistreview}
+
+Your instructor will ask you to create a systematic list to help you review what you learned in Day 4, and also to help introduce today's topic.
+
+\section{What Is a Number System?}
+
+A \textbf{number system} is a series of symbols that we use to represent numeric values.  We are used to using \addindex{Decimal numbers}{decimal numbers} in our daily lives.  This number system, as indicated by the Greek root \textit{deci}, meaning ``ten,'' has ten digits -- namely, 0 through 9.  With those ten digits, we can describe any number we're thinking of.
+
+If we create a systematic list of two-digit combinations of the digits 0 through 9, what emerges is a list of numbers between 0 and 99, in numeric order:  00, 01, 02, $\ldots$, 09, 10, 11, 12, $\ldots$, 39, 40, 41, $\ldots$, 98, 99.
+
+Now consider a longer number, like 3284.  Each of those digits has a \textit{place name} -- there's a ones place, and a tens place, and so forth.  Why are those the names of the places?  Because that number is the same as \textit{three thousands, two hundreds, eight tens, and four ones}.
+
+But why?  Well, it is no coincidence that each of those place names is equal to a power of ten.  Notice:
+
+\[
+\begin{array}{rclclclcl}
+    3284 & = & 3 \cdot 1000 & + & 2 \cdot 100 & + & 8 \cdot 10 & + & 4 \cdot 1\\
+         & = & 3 \cdot 10^3 & + & 2 \cdot 10^2 & + & 8 \cdot 10^1 & + & 4 \cdot 10^0\\
+\end{array}
+\]
+
+Notice that for each of those exponents, the base is ten -- hence, this number was written in \textit{base ten}.
+
+\section{Binary Numbers}
+    
+It might surprise you to learn that programmers sometimes use a number system other than base ten when discussing what happens inside a computer.
+
+At its most basic hardware level, all a computer can recognize is things like whether a voltage is above or below a certain threshold, or whether a switch is open or closed, or whether a chunk of metal is aligned magnetically north or south.  All of these situations -- high or low, open or closed, yes or no -- represent \textbf{binary} states.  (The Greek root \textit{bi} shows up in other words you recognize, like \textit{bicycle} and \textit{bilingual}, and it means ``two.'')
+
+Due to this tendency of computer components to exist in one of two binary states, we use \addindex{Binary numbers}{binary numbers} to represent these states.
+
+Just like decimal numbers, each digit in binary numbers represents a base and an exponent.  With these numbers, however, the base for each exponent is two -- hence, \textit{base two} numbers.  The rightmost column in a binary number represents the $2^0$ place, or the \textit{ones place}; the middle column is the $2^1$ or \textit{twos place}; and the left column is the $2^2$, or \textit{fours place}.  Therefore, starting from the top, those three-binary-digit sequences represent the decimal numbers 0 through 7.  By the time you are done with the activities in Day \thechapter, you should be able to convert any decimal number within a certain range to binary, and vice versa.

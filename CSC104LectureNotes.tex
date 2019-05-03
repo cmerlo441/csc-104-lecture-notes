@@ -1,0 +1,412 @@
+\documentclass[12pt,twoside]{book}
+%\usepackage{elocalloc} % http://tex.stackexchange.com/questions/38607/no-room-for-a-new-dimen
+\setlength{\parindent}{0em}
+
+\hyphenpenalty=5000
+\tolerance=1000
+
+\pdfpageheight 11in
+\pdfpagewidth 8.5in
+
+\setlength{\textwidth}{6.5in}
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{0.5pt}
+
+\usepackage[usenames]{color}
+\usepackage[titletoc]{appendix}
+\usepackage{amsfonts,
+            amsmath,
+            amssymb,
+            array,
+            caption,
+            enumerate,
+            enumitem,
+            fancyhdr,
+            fourier,
+            graphicx,
+            hologo,
+            imakeidx,   % makeidx doesn't work with xelatex for some reason
+            listings,
+            longtable,
+            lmodern,
+            minitoc,
+            multicol,
+            newfloat,
+            parskip,
+            pdfpages,
+            sectsty,
+            tabularx,
+            tabulary,
+            tcolorbox,
+            tikz,
+            tikz-qtree,
+            ulem,
+            url,
+            wrapfig,
+            xtab
+}
+\usepackage[chapter]{minted}
+\usepackage[colorlinks=true,linkcolor=blue!80,urlcolor=blue!80]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+\usepackage[cc]{titlepic}
+\renewcommand{\mtifont}{\large\sffamily}
+\renewcommand{\mtcfont}{\small\sffamily}
+\renewcommand{\mtcSfont}{\small\sffamily}
+\renewcommand{\mtcSSfont}{\small\sffamily}
+\renewcommand{\mtcSSSfont}{\small\sffamily}
+\urlstyle{same}
+
+\partfont{\color{mLightBrown}}
+\chapterfont{\color{mLightBrown}}
+
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\setsansfont[Mapping=tex-text]{Fira Sans}
+\setmonofont{FiraMono-Regular}
+\usepackage[mathrm=sym]{unicode-math}
+\setmathfont{Fira Math}
+\renewcommand{\familydefault}{\sfdefault}
+
+%\usepackage{cleveref} % must be loaded after hyperref
+
+% \renewcommand{\theFancyVerbLine}{\ttfamily \textcolor{mLightBrown}{\footnotesize \oldstylenums{\arabic{FancyVerbLine}}}}
+
+\setminted[python]{%
+    bgcolor=black!5,
+    fontsize=\small,
+    frame=none,
+    framesep=2mm,
+    linenos
+}
+\tcbuselibrary{breakable,listings,minted}
+
+\newtcblisting[list inside=mypy,auto counter,number within=chapter]{py}[2]{%
+    colback=black!5, 
+    colframe=mDarkGreen,
+    coltitle=mLightBrown,
+    listing only,
+    sharp corners=downhill,
+    minted language=python,
+    minted options={numbersep=2mm},
+    title=Code Example \thetcbcounter: #1,
+    label=lst:#2
+}
+
+\newtcbinputlisting[list inside=mypy,auto counter,number within=chapter]{\pyfile}[3]{%
+    colback=black!5, 
+    colframe=mDarkGreen,
+    coltitle=mLightBrown,
+    listing engine=minted,
+    listing only,
+    breakable,
+    % enhanced jigsaw,
+    sharp corners=downhill,
+    minted language=python,
+    minted options={numbersep=2mm},
+    title=Code Example \thetcbcounter: #1,
+    listing file={#2},
+    label=lst:#3
+}
+
+\newtcolorbox[%
+    auto counter,
+    number within=chapter,
+    blend into=figures,
+    number freestyle={\noexpand\thechapter.\noexpand\arabic{\tcbcounter}}
+]{myfigure}[2][]{%
+    floatplacement=htb,
+    capture=hbox,
+    % width=\linewidth,
+    blend before title=colon hang,
+    title={#2},
+    label={#2},
+    every float=\centering,
+    #1,
+    sharp corners=downhill,
+    colback=white,
+    colframe=mDarkGreen,
+    coltitle=mLightBrown
+}
+
+\newtcolorbox[%
+    auto counter,
+    number within=chapter,
+    blend into=tables,
+    number freestyle={\noexpand\thechapter.\noexpand\arabic{\tcbcounter}}
+]{mytable}[2][]{%
+    floatplacement=htb,
+    capture=hbox,
+    blend before title=colon hang,
+    title={#2},
+    label={#2},
+    before upper={\centering%
+    \begin{minipage}{0.93\linewidth}%
+    \centering},
+    after upper={\end{minipage}},
+    every float=\centering,
+    #1,
+    sharp corners=uphill,
+    colupper=white,
+    colback=mLightBrown,
+    colframe=mDarkGreen,
+    coltitle=mLightBrown
+}
+
+\newtcolorbox[%
+]{note}[2][]{%
+    before title={\textbf{Important Note: }},
+    float=htb,
+    blend before title=colon hang,
+    title={\textbf{#2}},
+    every float=\centering,
+    #1,
+    sharp corners=uphill,
+%    colback=red!5!white,
+    colback=mLightBrown,
+%    colframe=red!75!black,
+    colframe=mDarkGreen,
+    coltitle=white,
+    coltext=white
+}
+
+
+\usepackage[explicit]{titlesec}
+
+\definecolor{mLightBrown}{HTML}{EB811B}
+\definecolor{mLightGreen}{HTML}{14B03D}
+\definecolor{mDarkGreen}{HTML}{27363A}
+
+\makeatletter
+\renewcommand{\@chapapp}{Day}
+\makeatother
+
+\usepackage[lmargin=1.5in,rmargin=0.75in,tmargin=1in,bmargin=1in]{geometry}
+
+% TikZ stuff
+\usetikzlibrary{arrows,backgrounds,calc,decorations,decorations.pathreplacing,decorations.shapes,fit,positioning,shadows,shapes,trees}
+
+
+
+\DeclareCaptionFont{white}{\color{mLightBrown}\small}
+\DeclareCaptionFormat{listing}{\colorbox{mDarkGreen}{\parbox{\textwidth}{\vspace{1mm}~~#1#2#3\vspace{1mm}}}}
+\captionsetup[listing]{format=listing,labelfont=white,textfont=white}
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=mLightBrown,
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=mLightBrown,
+    text width=10em, text centered, rounded corners, minimum height=4em]
+% \tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+%     minimum height=2em]
+\tikzstyle{nebula} = [cloud, draw, fill=mLightBrown,
+    text width=4.5em, text centered, minimum height=4em,cloud ignores aspect,
+    cloud puffs=8.5]
+
+\tikzstyle{dummy} = [rectangle, draw, color=white,fill=white, text width=10em, minimum height=4em]
+
+\tikzstyle{merge_1} = [rectangle, draw, fill=blue!20,
+    text width=12em, text centered, rounded corners]
+\tikzstyle{merge_2} = [rectangle, draw, fill=blue!20,
+    text width=7em, text centered, rounded corners]
+\tikzstyle{merge_3} = [rectangle, draw, fill=blue!20,
+    text width=4em, text centered, rounded corners]
+\tikzstyle{merge_4} = [rectangle, draw, fill=blue!20,
+    text width=2em, text centered, rounded corners]
+
+\tikzstyle{gone} = [rectangle, draw=gray, fill=gray!20,
+    text width=2em, text centered, text=gray, rounded corners]
+\tikzstyle{gone_3} = [rectangle, draw=gray, fill=gray!20,
+    text width=4em, text centered, text=gray, rounded corners]
+
+\tikzstyle{empty} = [rectangle, draw, fill=blue!20,
+    text width=1em, rounded corners]
+\tikzstyle{emptyleaf} = [rectangle, draw, fill=green!20,
+    text width=1em, rounded corners]
+
+\tikzstyle{blank} = [rectangle]
+
+\tikzstyle{2node} = [circle, draw, fill=blue!20,
+    text width=0.3cm, text centered]
+\tikzstyle{3node} = [ellipse, draw, fill=blue!20,
+    text width=1cm, text centered]
+\tikzstyle{new2node} = [circle, draw, fill=red!20,
+    text width=0.3cm, text centered]
+\tikzstyle{new3node} = [ellipse, draw, fill=red!20,
+    text width=1cm, text centered]
+
+\tikzstyle{btree} = [rectangle, draw, fill=blue!20, text centered]
+
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{background}=[rectangle, %dashed,
+                        draw=blue,
+                        fill=green!30,
+                        inner sep=0.3cm,
+                        rounded corners=5mm]
+
+
+\pagestyle{empty}
+
+\title{{\color{mLightBrown}\textbf{CSC 104 Lecture Notes}}\\}
+\author{Prof. Christopher R. Merlo\\
+Nassau Community College\\
+\texttt{cmerlo@ncc.edu}\\
+\url{http://www.matcmp.ncc.edu/~cmerlo/}
+%/date{}
+}
+\titlepic{\includegraphics[width=0.25\textwidth]{NCCMasterCPrint}}
+
+% Itemize
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bmu}{\begin{multicols}}
+\newcommand{\emu}{\end{multicols}}
+
+\makeindex
+\begin{document}
+
+\frontmatter
+
+\let\stdsection\section
+
+\newcommand{\code}[1]{\textcolor{mLightBrown}{\textsf{#1}}}
+\newcommand{\prop}[2]{\label{prop:#1}\textcolor{mLightBrown}{\textsf{\textbf{Proposition #1:}}} \textit{#2}}
+\newcommand{\qed}{~\hfill\textcolor{mLightBrown}{$\blacksquare$}}
+
+\renewcommand{\labelitemi}{\textcolor{mLightBrown}{$\bullet$}}
+\renewcommand{\labelitemii}{\textcolor{mLightBrown}{$\bullet$}}
+\renewcommand{\labelenumi}{\textcolor{mLightBrown}{\theenumi.}}
+
+\pagenumbering{roman}
+\maketitle
+
+\chapter{Copyright}
+
+These lecture notes are \copyright~2019 Christopher R. Merlo.
+
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-sa/4.0/} or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+\vfill\vfill
+
+\begin{center}
+\includegraphics[scale=0.85]{cc.logo.eps}
+\includegraphics{by.eps}
+\includegraphics{sa.eps}
+\end{center}
+
+\vfill
+
+
+\dominitoc
+\tableofcontents
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+
+\SetupFloatingEnvironment{listing}{name=Code Example}
+\SetupFloatingEnvironment{listing}{listname=List of Code Examples}
+\renewcommand{\listoflistingscaption}{List of Code Examples}
+
+%\listoflistings
+\tcblistof[\chapter*]{mypy}{List of Code Examples}
+\addcontentsline{toc}{chapter}{List of Code Examples}
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+
+\cleardoublepage
+
+\input{about}
+\input{acknowledgments}
+
+\newpage
+\pagenumbering{arabic}
+
+\pagestyle{fancy}
+
+% Even page: chapter on right
+% Odd page: section on left
+
+\fancyhead[RE]{\color{mLightBrown}\textbf{\small\nouppercase\leftmark}}
+\fancyhead[RO]{\color{mLightBrown}\textbf{\thepage}}
+\fancyhead[LO]{\color{mLightBrown}\textbf{\small\nouppercase\rightmark}}
+\fancyhead[LE]{\color{mLightBrown}\textbf{\thepage}}
+\fancyfoot[C]{}
+
+% Definitions
+\newcommand{\review}{%
+  \fcolorbox{reviewcolor}{red!5}{\parbox{\textwidth}{%
+  \vskip10pt
+  \leftskip10pt\rightskip10pt
+  \textcolor{reviewcolor}{\textsf{\textbf{This is review material.}}}\\
+  You should have been familiar with this upon passing CSC 130.  Be sure to go over this on your own, and ask questions in office hours if you need reinforcement.\\
+}} \vspace{0.5em} }
+
+\newcommand{\topquote}[2]{%
+    {\small
+    \fcolorbox{mDarkGreen}{mDarkGreen}{\parbox{\textwidth}{%
+        \vskip10pt
+        \leftskip10pt\rightskip10pt
+        {\textcolor{mLightBrown}{#1}}\\
+        {\textcolor{mLightGreen}{\textit{ -- #2}}}\\
+    }}\vspace{0.5em}
+}}
+
+\newcommand{\addindex}[2]{%
+    \index{#1}\textbf{\textcolor{mLightBrown}{#2}}%
+}
+
+\mainmatter
+
+\part{Problem Solving}
+
+\adjustmtc
+\adjustmtc
+\adjustmtc
+\adjustmtc
+
+\input{day-courseintro}
+\input{day-instructions}
+\input{day-matrix}
+\input{day-systematic}
+\input{day-binary}
+\input{day-conditionals1}
+\input{day-nested-conditionals}
+\input{day-debugging-conditionals}
+\input{day-exam1review}
+\input{day-exam1}
+
+\part{Programming in Python}
+
+\input{day-python1}
+\input{day-errors-zylabs}
+\input{day-variables-objects}
+\input{day-modules}
+\input{day-first-script}
+\input{day-python-conditionals}
+\input{day-bagels}
+\input{day-movie-ticket}
+\input{day-exam2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+\appendixpage
+\addappheadtotoc
+% \input{b2d}
+\input{idle}
+\input{keywords}
+
+\backmatter
+
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+\end{document}

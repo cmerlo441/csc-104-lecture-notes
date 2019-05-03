@@ -1,0 +1,58 @@
+% !TEX root = CSC104LectureNotes.tex
+
+% \setcounter{chapter}{11}
+\chapter{Variables and Expressions}
+
+\topquote{Quote.}{Attribution}
+
+\minitoc
+
+\section{Variables}
+
+As we started to explore on Day \ref{day:python1}, a \addindex{Variable}{variable} lets us store some information that we can use later.  Specifically, when we create a variable, we ask the computer to use a part of its \addindex{Memory}{memory}, or RAM, which we identify by name.  Later uses of that name keep referring to the same place in memory, so that we can retrieve what we stored.
+
+\subsection{Assignment}
+
+We create a variable by assigning a value to it, like you did when you typed \mintinline{python}{name = 'Olivia'}.  That equals sign in the middle has a special meaning to the Python interpreter.  It's called the \textbf{assignment operator}, and its presence in that statement makes it an \textbf{assignment statement}.  We use assignment statements to create variables, and to change their values.
+
+\subsection{A Variable Has One Value}
+
+If, later in the program, we type \mintinline{python}{name = 'Henry'}, then the name Olivia is removed from memory, and the name Henry takes its place in the variable called \texttt{name}.  If you need to store two pieces of information at the same time, you will have to make two variables, each with its own name.
+
+\subsection{Identifiers}
+
+Each variable must have a valid \addindex{Identifier}{identifier} -- that's a fancy word for ``name.''  Chapter 2 of the textbook discusses what identifiers are legal according to Python syntax, and what makes other Python programmers think an identifier is good.
+
+\section{Objects}
+
+In Python, variables are considered to be \addindex{Object}{objects}, and each object has a value, a type, and an identity.  The value is the data the object contains.  The type of an object is the same as the type of its value.  It's important to know that different data types sometimes disallow certain interactions -- for instance, you can't add 5 to ``Olivia''.
+
+An object's identity allows us to tell whether two identifiers refer to the same object or not.  This is not important now, but it will be later.  What is important now is to see that an object's \textit{identifier} is its name, and its \textit{identity} is a reflection of how it is stored in memory.
+
+We can use the Python function \mintinline{python}{type()} to get an object's type, and we can use the Python function \mintinline{python}{id()} to get an object's identity.
+
+\section{Two Kinds of Numbers}
+
+Programming languages differentiate between two different kinds of numbers.  An \addindex{Number!Integer}{integer} is a number that has no fractional or decimal component.  Programmers call numbers with decimal points \addindex{Number!Floating point}{floating-point numbers}, because of how they're stored in memory.  You will frequently hear programmers use the shortcuts \texttt{int} and \texttt{float} to refer to these data types, based on type names used in programming languages.
+
+Just as there's an \mintinline{python}{int()} function to turn a string into an integer, there's a \mintinline{python}{float()} function to turn a string into a float.
+
+In the next sections, you will learn to be careful when mixing numeric types in arithmetic expresssions.
+
+\section{Expressions}
+
+You can build up all sorts of mathematical expressions using variable names, literal values (like \texttt{5}), and operators.  Notice that some operators are \textit{unary}, like the negation operator in \texttt{-5}, while most operators are \textit{binary}, like the subtraction operator in \texttt{x - 5}.
+
+It is considered good programming practice to leave a space around mathematical operators, because this makes code easier to read.  Consider:
+
+\begin{minted}{python}
+# An expresssion with no whitespace
+x=31*y-14*(z-2)/17
+
+# The same expression with a space surrounding each operator
+x = 31 * y - 14 * (z - 2) / 17
+
+# Which one would you rather read?
+\end{minted}
+
+Be sure to pay attention to the precedence rules when constructing an expression, because Python will always follow them when evaluating an expression.

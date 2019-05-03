@@ -1,0 +1,223 @@
+% !TEX root = CSC104LectureNotes.tex
+
+\setcounter{chapter}{3}
+\chapter{Systematic Lists}
+
+\topquote{It's not that I'm so smart, it's just that I stay with problems longer.}{Albert Einstein}
+
+\minitoc
+
+\section{Interview Question}
+
+Day \thechapter{} starts with an interview question about the competitors in a tournament.  See if you can answer the question without help.  If not, see if a nearby classmate can give you a hint.
+
+\section{Systematic Lists}
+
+A \addindex{Systematic List}{systematic list} is a list of related items that are listed in a predetermined order.  The ability to create such a list is a skill that programmers use in solving a certain kind of problem.
+
+\subsection{Why Use Systematic Lists?}
+
+Creating a systematic list is a great way to explore \textit{combinations} of items or values.  Here's an example:  Suppose that Allison, Becky, and Charlotte are running a race.  What are all the race results that can happen?  It's possible for Becky to win, followed by Charlotte and then Allison, but it's also possible for Allison to win, followed by Charlotte and then Becky.
+
+It seems like human nature for us to discuss these possible results in this way, by discussing each result as we think of it.  However, there are two potential problems in this scenario:
+\bi
+    \item There is no way to be sure that we haven't skipped any results
+    \item There is no way to know that we completed the task
+\ei
+
+Using a systematic list helps solve both of those problems.
+
+\subsection{How Do We Create a Systematic List?}
+
+The best way to avoid these problems is to attack each situation the same way.  We will develop an \textit{algorithm}, and follow it.  A successful algorithm will not only work every time, but finish as soon as it has to.
+
+An \addindex{Algorithm}{algorithm} is, according to Merriam-Webster, ``a step-by-step procedure for solving a problem or accomplishing some end.''  A good algorithm should be \textit{describable}, \textit{repeatable}, and \textit{verifiable} -- that is, we should be able to talk about it, use it, and know it works.
+
+The most successful algorithm for creating a systematic list relies heavily upon the \textit{order} of the items to be listed.  Notice, in our previous example, that the race runners have a natural ordering criteria -- we can alphabetize their names.  A statement like ``Becky's name comes before Charlotte's'' makes sense to us.  We will use this feature of people's names to our advantage.
+
+Our systematic list algorithm involves repeating this step over and over:
+\bi
+    \item Add the smallest unused value in the left-most available position
+    \item Only use the next value when all combinations utilizing the present value have been enumerated
+\ei
+
+\subsection{Creating a Systematic List}
+
+We will fill in this table with as many rows as we need:
+
+\begin{center}
+    \begin{tabulary}{\textwidth}{CCC}
+        First Place & Second Place & Third Place\\
+        \hline
+        \textit{result} & \textit{result} & \textit{result}
+    \end{tabulary}
+\end{center}
+
+Using our race running example, the ``first'' name we have available is Allison, and so we will start by enumerating all of the race results in which she is the winner.  Let's place Allison in the left-most position.
+
+\begin{center}
+    \begin{tabulary}{\textwidth}{CCC}
+        First Place & Second Place & Third Place\\
+        \hline
+        Allison & \textit{result} & \textit{result}
+    \end{tabulary}
+\end{center}
+
+Once we've done that, as the algorithm says, we will add the smallest unused value in the left-most available position.  The ``smallest'' name we haven't used yet is Becky's, and the left-most available position is next to Allison.
+
+\begin{center}
+    \begin{tabulary}{\textwidth}{CCC}
+        First Place & Second Place & Third Place\\
+        \hline
+        Allison & Becky & \textit{result}
+    \end{tabulary}
+\end{center}
+
+There is one more spot in this row to fill, and one more name -- the ``largest'' or latest alphabetically -- to add.
+
+\begin{center}
+    \begin{tabulary}{\textwidth}{CCC}
+        First Place & Second Place & Third Place\\
+        \hline
+        Allison & Becky & Charlotte
+    \end{tabulary}
+\end{center}
+
+Because there are no other names to replace Charlotte's with, we will consider ourselves done with all of the combinations that start with \textit{Allison and Becky}.
+
+Note, however, that there are more possible results that start with Allison.  Let's backtrack to that scenario:
+
+\begin{center}
+    \begin{tabulary}{\textwidth}{CCC}
+        First Place & Second Place & Third Place\\
+        \hline
+        Allison & Becky & Charlotte\\
+        Allison & \textit{result} & \textit{result}
+    \end{tabulary}
+\end{center}
+
+Remember what our algorithm tells us to do:  \textit{Add the smallest unused value in the left-most available position}.  The smallest name we haven't used for second place yet is Charlotte, so let's add her:
+
+\begin{center}
+    \begin{tabulary}{\textwidth}{CCC}
+        First Place & Second Place & Third Place\\
+        \hline
+        Allison & Becky & Charlotte\\
+        Allison & Charlotte & \textit{result}
+    \end{tabulary}
+\end{center}
+
+In this row, we have used Allison's name and we have used Charlotte's name, but we have not used Becky's name.  The algorithm tells us to \textit{Add the smallest unused value in the left-most available position}.  That means add Becky to the third column:
+
+\begin{center}
+    \begin{tabulary}{\textwidth}{CCC}
+        First Place & Second Place & Third Place\\
+        \hline
+        Allison & Becky & Charlotte\\
+        Allison & Charlotte & Becky\\
+    \end{tabulary}
+\end{center}
+
+Since we've now used every runner's name in this row, we can conclude that there are no more combinations that start with \textit{Allison and Charlotte}.
+
+Let's backtrack once again:
+
+\begin{center}
+    \begin{tabulary}{\textwidth}{CCC}
+        First Place & Second Place & Third Place\\
+        \hline
+        Allison & Becky & Charlotte\\
+        Allison & Charlotte & Becky\\
+        Allison & \textit{result} & \textit{result}
+    \end{tabulary}
+\end{center}
+
+Are there any more combinations that start with just \textit{Allison}?  In other words, if Allison wins the race, are there any other orders in which the runners can finish?
+
+The algorithm says \textit{Add the smallest unused value in the left-most available position}.  But here in Column 2, there are no more unused values.  The next part of the algorithm says  \textit{Only use the next value when all combinations utilizing the present value have been enumerated}.  Since we have now enumerated all of the conditions utilizing the present value -- that is, we've listed all the results possible when Allison wins -- we are now free to use the next value.
+
+\begin{center}
+    \begin{tabulary}{\textwidth}{CCC}
+        First Place & Second Place & Third Place\\
+        \hline
+        Allison & Becky & Charlotte\\
+        Allison & Charlotte & Becky\\
+        \sout{Allison} & \sout{\textit{result}} & \sout{\textit{result}}
+    \end{tabulary}
+\end{center}
+
+In this case, the next value is the next smallest value in Column 1, meaning it's time to see what can happen if Becky wins the race.
+
+\begin{center}
+    \begin{tabulary}{\textwidth}{CCC}
+        First Place & Second Place & Third Place\\
+        \hline
+        Allison & Becky & Charlotte\\
+        Allison & Charlotte & Becky\\
+        Becky & \textit{result} & \textit{result}
+    \end{tabulary}
+\end{center}
+
+At this step, we ask once again what the smallest remaining value is.  We haven't used Allison's name in this row yet, so we put her name into Column 2 now.
+
+\begin{center}
+    \begin{tabulary}{\textwidth}{CCC}
+        First Place & Second Place & Third Place\\
+        \hline
+        Allison & Becky & Charlotte\\
+        Allison & Charlotte & Becky\\
+        Becky & Allison & \textit{result}
+    \end{tabulary}
+\end{center}
+
+That leaves Charlotte to finish third:
+
+\begin{center}
+    \begin{tabulary}{\textwidth}{CCC}
+        First Place & Second Place & Third Place\\
+        \hline
+        Allison & Becky & Charlotte\\
+        Allison & Charlotte & Becky\\
+        Becky & Allison & Charlotte\\
+    \end{tabulary}
+\end{center}
+
+As before, there is another name available to put right after Becky's:
+
+\begin{center}
+    \begin{tabulary}{\textwidth}{CCC}
+        First Place & Second Place & Third Place\\
+        \hline
+        Allison & Becky & Charlotte\\
+        Allison & Charlotte & Becky\\
+        Becky & Allison & Charlotte\\
+        Becky & Charlotte & Allison\\
+    \end{tabulary}
+\end{center}
+
+There is only one winner left to explore, and we complete the systematic list by completing the algorithm:
+
+\begin{center}
+    \begin{tabulary}{\textwidth}{CCC}
+        First Place & Second Place & Third Place\\
+        \hline
+        Allison & Becky & Charlotte\\
+        Allison & Charlotte & Becky\\
+        Becky & Allison & Charlotte\\
+        Becky & Charlotte & Allison\\
+        Charlotte & Allison & Becky\\
+        Charlotte & Becky & Allison\\
+    \end{tabulary}
+\end{center}
+
+\section{Characteristics of a Systematic List}
+
+When you are asked to produce a systematic list of all the outcomes of this race, it is not enough to just list all of the outcomes; they must be listed in the proper order.  You must create a systematic list, not just a list.
+
+The system in this list lies in the ordering.  First, notice that the values in the first column never decrease.  All of the outcomes in which Allison wins are listed before any of the others, and all of the outcomes in which Becky wins are listed before any in which Charlotte wins.
+
+Then, when you consider all of the outcomes that have the same first-column value, notice that the second-column values are also written in non-decreasing order -- Becky then Charlotte, Allison then Charlotte, and Allison then Becky.
+
+\section{Creating Systematic Lists}
+
+Follow your instructor's lead in creating some systematic lists in class.

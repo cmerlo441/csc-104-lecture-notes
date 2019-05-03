@@ -1,0 +1,184 @@
+% !TEX root = CSC104LectureNotes.tex
+
+\setcounter{chapter}{6}
+\chapter{Nested Conditionals and Complex Conditonals}
+
+\topquote{The most important property of a program is whether it accomplishes the intention of its user.}{C.\ A.\ R.\ Hoare}
+
+\minitoc
+
+\section{Nested Conditionals}
+
+We learned in Day \ref{day:conditionals1} that a condition can only have one of two values, \texttt{True} or \texttt{False}, and therefore a \textit{conditional statement} can only have two possible \textit{outcomes}.  These ideas make conditional statements very useful for certain problems in life, but there are situations that need more complex tools than these.
+
+Consider, for example, running into an old middle school classmate in town.  You remember each other, and realize quickly that you haven't seen each other since middle school.  Your friend says, ``So what happened to you?  Did you go to Kellenberg or something?''  If you didn't, then you might be surprised if your friend follows up with ``Oh, I guess you went to St.\ Anthony's.''  Even if you \textit{did} go to to St.\ Anthony's, that statement illustrates quite a gap in your friend's logical reasoning skills.
+
+The problem is that the conditional statement that's implied here has more \textit{outcomes} than your friend has considered.  Her thinking appears to work like Figure \ref{fig:hs1}.
+
+\begin{myfigure}[label=fig:hs1]{Flawed Thinking About High School}
+    \begin{minipage}{0.925\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \centering
+            \node[decision,text width=6em](hs) {Did you go to Kellenberg?};
+
+            \node[block,below left = of hs](yes) {You went to Kellenberg};
+            \node[block,below right = of hs](no) {You went to St.\ Anthony's};
+
+            \path[line] (hs) -| (yes) node[near start, above=0.5em] {Yes};
+            \path[line] (hs) -| (no) node[near start, above=0.5em] {No};
+        \end{tikzpicture}
+    \end{minipage}
+\end{myfigure}
+
+Of course, your friend should be thinking like Figure \ref{fig:hs2} instead.
+
+\begin{center}
+    \begin{myfigure}[label=fig:hs2]{Less Flawed Thinking About High School}
+        \begin{tikzpicture}
+            \centering
+            \node[decision,text width=6em](hs) {Did you go to Kellenberg?};
+
+            \node[block,below = 3em of hs](sta) {You went to St.\ Anthony's};
+            \node[block,left = of sta](k) {You went to Kellenberg};
+            \node[nebula,right = of sta](others) {You went somewhere else};
+
+            \path[line] (hs) -| node[near start,above=0.5em] {Yes} (k);
+            \path[line] (hs) -- (sta) node[near end,above right=0.5em] {No};
+            \path[line] (hs) -| node[near start,above=0.5em] {\textcolor{red}{Also no, but in red}} (others);
+        \end{tikzpicture}
+    \end{myfigure}
+\end{center}
+
+This is problematic, too.  We haven't learned about a conditional with three or more outcomes.  There's a simple reason for that -- \textit{there aren't any}.  The whole idea of a condition is that it's either False or True.  There is no third Boolean value.
+
+Since a single conditional statement can only have two outcomes, what's needed in a scenario like this is multiple conditional statements.  Let's consider another example: you and your classmates all fall into one of three categories: you're either a Computer Science major, an Information Technology major, or your majoring in something else.  If you ask one of your classmates ``Are you a Computer Science major?'', the two outcomes are:
+
+\begin{itemize}
+    \item \textbf{Yes:} Now you know the student's major
+    \item \textbf{No:} You don't know what the student's major is, but you know it's either IT or something else
+\end{itemize}
+
+If your classmate's answer is ``Yes'', you're done with the conversation.  If, however, the answer is ``No'', then there are still two possible outcomes.  Fortunately, you know how to deal with two possible outcomes -- use a conditional statement!  Consider Figure \ref{fig:csmajor}:
+
+\begin{center}
+    \begin{myfigure}[label=fig:csmajor]{Determining a Student's Major With a Nested Conditional}
+        \begin{tikzpicture}[node distance=0.5cm]
+            \tikzstyle{background}=[rectangle, %dashed,
+                draw=mLightBrown, fill=mDarkGreen,
+                inner sep=0.3cm, rounded corners=5mm]
+            \node[decision](csq) {Are you a CS major?};
+
+            \node[block, below left = of csq] (cs) {You're a CS major};
+            \node[dummy,below right = of csq](dummy){~};
+
+            \node[decision, below = 1cm of dummy](itq) {Are you an IT major?};
+
+            \node[block, below left = of itq](it) {You're an IT major};
+            \node[block, below right = of itq](other) {Your major is something else};
+
+            \path[line] (csq) -| node[near start,above=0.5em] {Yes} (cs);
+            \path[line] (csq) -| node[near start, above=0.5em] {No} (itq);
+
+            \path[line,mLightBrown,thick] (itq) -| node[near start,above=0.5em] {Yes} (it);
+            \path[line,mLightBrown,thick] (itq) -| node[near start,above=0.5em] {No} (other);
+
+            \begin{pgfonlayer}{background}
+                \node [background,
+                       fit=(itq) (it) (other)] {};
+              \end{pgfonlayer}
+        \end{tikzpicture}
+    \end{myfigure}
+\end{center}
+
+The shaded box contains a \addindex{Statement!Conditional!Nested}{nested conditional}.  After asking the first question (is major equal to Computer Science), if the answer is no, you have to \textit{ask another question}.  In this scenario, where there are three outcomes, two questions are necessary to arrive at the right answer.  In general, you must ask $n-1$ questions when choosing from among $n$ outcomes.
+
+Creating a \addindex{Decision tree}{decision tree} like this is a good way to start thinking about how to write a nested conditional statement.  Once the picture is done, you can just read your decision tree from top to bottom and translate it into code.  Note that Python accomplishes nesting conditionals like this with the \mintinline{python}{elif} clause.  We will be using \mintinline{python}{elif} in our examples today and in the next few classes.
+
+Here's the conditional statement that matches this decision tree:
+
+\begin{verbatim}
+if major = CS:
+    "You're a CS major"
+elif major = IT:
+    "You're an IT major"
+else:
+    "Your major is something else"
+\end{verbatim}
+
+\section{Complex Conditionals}
+
+What will make you attend the next class meeting of CSC 104?  A couple of things have to be true: it has to be a \textit{day} on which the class meets, and it has to be a \textit{time} when the class is meeting.  If your class meets at 2:00 pm on Wednesday, then showing up at 9:30 on Wednesday isn't going to help you, and neither is arriving at 2:00 pm on Thursday.
+
+Then again, sometimes only one thing must be true for an outcome to occur.  If you're thirsty, you will drink some water.  But you will also drink some water if you have to take a pill.  You don't wait until both conditions are true before taking a drink of water; just one condition being true is sufficient.
+
+Both of these scenarios can be handled using a \addindex{Statement!Conditional!Complex}{complex conditional}.  These scenarios are similar to those from Day \ref{day:conditionals1} in that there are only one or two outcomes (and therefore no nesting is necessary), but they're different in that many individual conditions go into determining which outcome happens.  In these cases, we must rely on a new set of operators.
+
+\subsection{Boolean Operators}
+
+\addindex{Operators!Boolean operators}{Boolean operators} allow us to create a condition by combining other conditions together.  You know these operators as ``and'', ``or'', and ``not''.  You may also recognize them in symbol form from your high school symbolic logic section: $\land$, $\lor$, and $\lnot$.
+
+Recall your high school truth tables, as in Table \ref{tab:truthtables}:
+\begin{center}
+    \begin{mytable}[label=tab:truthtables]{And, Or, and Not Truth Tables}
+        \begin{tabulary}{5in}{CCC|C|C}
+            $x$ & $y$ & $x \land y$ & $x \lor y$ & $\lnot x$\\
+            \hline
+            F & F & F & F & T\\
+            F & T & F & T & T\\
+            T & F & F & T & F\\
+            T & T & T & T & F\\
+            \hline
+        \end{tabulary}
+    \end{mytable}
+\end{center}
+
+$x \land y$ (``x and y'') is only true if both $x$ and $y$ are true; otherwise it's false.  $x \lor y$ (``x or y'') is only false if both $x$ and $y$ are false; otherwise it's true.
+
+Thankfully, Python does not require us to type the $\land$, $\lor$, and $\lnot$ symbols (which is good, because they aren't on the keyboard); we can just use \mintinline{python}{and}, \mintinline{python}{or}, and \mintinline{python}{not}.
+
+With those operators, we can say things like ``If it's Wednesday \mintinline{python}{and} it's 2:00 pm, then I will go to CSC 104'', or ``If I'm thirsty \mintinline{python}{or} I need to take a pill, then I will drink water.''
+
+\section{Writing Conditional Statements}
+
+When you are asked to create a conditional statement from scratch, you should first consider your outcomes.
+
+\begin{itemize}
+    \item Is there \textbf{one outcome}?  All you need is a \textit{simple if statement}.
+    \item Are there \textbf{two outcomes}?  Write an \textit{if-else statement}.
+    \item Are there \textbf{more than two outcomes}?  You will need a \textit{nested conditional statement}.
+\end{itemize}
+
+Once you've determined what kind of statement to write, then choose a first question to ask.  The question you choose should map answers to outcomes.  In other words, one of the answers to the question should always send you down one side of the flowchart, and the other answer should always send you down the other side.  For the high school scenario, the question ``Did you go to Kellenberg?'' satisfies this criteria.  A ``yes'' always finishes our task, and a ``no'' always leads us to ask more questions.
+
+Note that these questions will sometimes actually consist of more than one condition, as explained in the example that follows.
+
+\subsection{The Drinking Water Example}
+
+Consider the scenario from before where we're trying to determine whether to drink water or not.  There is only one outcome -- ``drink water'' or do nothing -- and so we want to write one simple if statement.  But there are two conditions to check on, and so they must be combined in a complex conditional statement.
+
+You will be prompted to write several conditional statements during class today.  Make sure to ask for help or clarification as soon as you need to.
+
+\section{A Note About Grading}
+
+When you are graded on writing conditional statements, part of your grade will be based on the \textit{efficiency} of your statement -- in other words, you will lose points if you ask more questions than you have to.
+
+Avoid these common mistakes, that can cost you points on homework and exams:
+\begin{itemize}
+    \item Don't ask a question that you already know the answer to.  Consider the exercise you did in class on Day \ref{day:conditionals1} that results in either ``pass'' or ``fail'' based on the student's average.  Resist the temptation to do this:
+    \begin{verbatim}
+if average >= 70:
+    "pass"
+elif average < 70:
+    "fail"
+    \end{verbatim}
+    Once your program reaches the \texttt{elif}, it already knows that the answer to that question is going to be true.  If the answer were false, this condition wouldn't be getting evaluated, because ``pass'' would have already been the outcome!  This conditional leads to the right outcomes, but it does so by asking one more question than necessary.  That's inefficient, and it will affect your grade.
+
+    \item Don't take two questions to ask one question.  This conditonal statement ``works'':
+    \begin{verbatim}
+if day = Wednesday:
+    if time = 2:00 pm:
+        ``go to CSC 104''
+    \end{verbatim}
+    With only one outcome, however, only one condition needs to be evaluated, and so the two conditions above need to be combined into one complex condition.
+\end{itemize}
