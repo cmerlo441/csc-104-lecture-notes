@@ -12,5 +12,5 @@ Then, make sure that [Pygments](http://pygments.org/download/) is installed.  Yo
 Once that's all done, you should be able to compile everything with this command:
 
 ```
-xelatex --shell-escape CSC104LectureNotes.tex
+xelatex -synctex=1 -shell-escape -interaction=nonstopmode CSC104LectureNotes.tex
 ```
