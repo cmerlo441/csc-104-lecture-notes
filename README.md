@@ -2,12 +2,15 @@
 
 LaTeX sources for the Lecture Notes for CSC 104 at Nassau Community College.
 
-You should be able to compile everything with this command:
+First, make sure you have the fonts installed:
+* [Fira Sans](https://fonts.google.com/specimen/Fira+Sans)
+* [Fira Mono](https://fonts.google.com/specimen/Fira+Mono)
+* [Fira Math](https://github.com/firamath/firamath)
+
+Then, make sure that [Pygments](http://pygments.org/download/) is installed.  You will probably have to have Python 3 installed first, so that you can use the pip3 tool to install Pygments.
+
+Once that's all done, you should be able to compile everything with this command:
 
 ```
 xelatex --shell-escape CSC104LectureNotes.tex
 ```
-
-You may have to run the command twice.
-
-You're also going to need [Fira Sans](https://fonts.google.com/specimen/Fira+Sans) and [Fira Mono](https://fonts.google.com/specimen/Fira+Mono) fonts installed.
