@@ -9,3 +9,5 @@ xelatex --shell-escape CSC104LectureNotes.tex
 ```
 
 You may have to run the command twice.
+
+You're also going to need [Fira Sans](https://fonts.google.com/specimen/Fira+Sans) and [Fira Mono](https://fonts.google.com/specimen/Fira+Mono) fonts installed.
