@@ -45,7 +45,7 @@ Of course, your friend should be thinking like Figure \ref{fig:hs2} instead.
 
             \path[line] (hs) -| node[near start,above=0.5em] {Yes} (k);
             \path[line] (hs) -- (sta) node[near end,above right=0.5em] {No};
-            \path[line] (hs) -| node[near start,above=0.5em] {\textcolor{red}{Also no, but in red}} (others);
+            \path[line,thick,red] (hs) -| node[near start,above=0.5em] {\textcolor{red}{Also no, but in red}} (others);
         \end{tikzpicture}
     \end{myfigure}
 \end{center}

@@ -1,0 +1,84 @@
+% !TEX root = CSC104LectureNotes.tex
+
+\chapter{The \texttt{graphics.py} Module}
+\label{day:graphics1}
+
+\topquote{If you can't make it good, at least make it look good.}{Bill Gates}
+
+\minitoc
+
+Today you will start learning how to make some fun, cool-looking Python programs.  But first, you need to understand a few concepts.
+
+\section{A Very Brief Introduction to Classes and Objects}
+
+Python is an \addindex{Object-Oriented Programming}{object-oriented} programming language.  This allows Python programmers to use our skills to describe groups of things -- what object-oriented programmers call \addindex{Class}{classes} -- based on how these things are similar.  For instance, all students at Nassau are similar because they all have ID numbers and they all register for classes.  In particular, when we define a class in our code, we specify the \textbf{\textit{behaviors}} (like registering for classes) and the \textbf{\textit{properties}} (like a student ID number) for a group of \textbf{\textit{objects}}.
+
+Once a programmer has defined a class, what usually follows is the process of creating one or more \addindex{Instance}{instances} of that class.  An instance of a class is just an object that has the properties and behaviors defined in that class.  We create an instance by calling a special kind of function, which shares its name with the class.
+
+Imagine that we have defined a class called \mintinline{py}{Pizza}.  The code inside the \mintinline{py}{Pizza} class defines several properties of a pizza, like its size, and whether it's been cooked or not.  The \mintinline{py}{Pizza} class also defines several behaviors for this pizza, like cooking it, or adding a topping.
+
+Creating an instance of the \mintinline{py}{Pizza} class -- an action programmers like to refer to as ``instantiating a \mintinline{py}{Pizza}'' -- is quite easy:
+
+\begin{minted}{python}
+myFirstPizza = Pizza()
+\end{minted}
+
+Notice that the class is called \mintinline{py}{Pizza}, and so we call the \mintinline{py}{Pizza()} function to instantiate it.
+
+\subsection{Instantiating a Class With Additional Information}
+
+Not everyone eats plain pizza.  If the \mintinline{py}{Pizza} class provides the functionality, you can specify the options you want when you instantiate it:
+
+\begin{minted}{python}
+myAwesomePizza = Pizza(pepperoni, sausage)
+\end{minted}
+
+\section{Modules Revisited}
+
+The world of Python code is broken up into \addindex{Module}{modules}.  A module is just a file that has some Python code in it.  Some modules contain the code for one class, and other modules contain the code for multiple classes.
+
+Let's say our \mintinline{python}{Pizza} class exists in a module called \texttt{food.py}.  We need to use an \addindex{Import}{import} statement to make the \mintinline{py}{Pizza} class available to us.  There are two ways to import code.  Consider this example:
+
+\begin{minted}{python}
+import food
+
+myFirstPizza = Pizza()  # this isn't going to work
+\end{minted}
+
+The reason that Line 3 isn't going to work is because we have to specify where the \mintinline{python}{Pizza()} function comes from.  We can fix that example's syntax using the \addindex{Dot operator}{dot operator}:
+
+\begin{minted}{python}
+import food
+
+myFirstPizza = Pizza.Pizza()  # now this works
+\end{minted}
+
+The dot operator is also sometimes called the \textit{scope resolution operator}, because it helps the Python interpreter to resolve where it's supposed to find the \mintinline{python}{Pizza()} function.  The dot operator always tells Python that the item after it is a feature of the item before it -- in this case, \mintinline{python}{Pizza()} (the function) belongs to \mintinline{python}{Pizza} (the class).
+
+This is fine, but it makes code take longer to type.  Frequently, programmers use the other syntax for the \mintinline{py}{import} statement:
+
+\begin{minted}{python}
+from food import Pizza
+
+myFirstPizza = Pizza()  # this works now
+\end{minted}
+
+The \mintinline{python}{from ... import ...} syntax adds the class at the end of the statement to the local script's scope, so that we can call its functions without using the class name and the dot operator.
+
+We will be using the \mintinline{python}{from ... import ...} syntax when we create graphical programs in this course.
+
+\section{The \texttt{graphics.py} Module}
+
+The \texttt{graphics.py} module contains Python classes written by Prof.\ John Zelle at Wartburg College in Iowa.  You can always download a copy from \url{http://www.matcmp.ncc.edu/csc104/graphics.py}, but the original location is \url{http://mcsp.wartburg.edu/zelle/python/graphics.py}.  To use this code, place a copy in the same location as the Python code you write.  To make the classes available, just type:
+
+\begin{minted}{py}
+from graphics import *
+\end{minted}
+
+The main class from the graphics module is called \mintinline{py}{GraphWin}, and so the first thing you will have to do in any graphical program is \textit{instantiate the \texttt{GraphWin} class} like this:  \mintinline{py}{win = GraphWin('Title', 250, 250)}.  Notice that the \mintinline{py}{GraphWin} function takes three \textit{arguments} or \textit{parameters}: a phrase which will appear in the title bar, the window's width (as an amount of pixels), and the window's height (also pixels).
+
+Once an instance of the \mintinline{py}{GraphWin} class exists, we can add (or \mintinline{py}{draw}) other objects in it, like circles and other geometric shapes.
+
+Code Example \ref{lst:testgraph} is a simple program you can type in to make sure that you have installed the graphics module correctly.  It instantiates a \mintinline{py}{GraphWin} object, a \mintinline{py}{Point} object, and a \mintinline{py}{Circle} object.  If you installed the module successfully, then when you run this script you should see the circle in the middle of the window that gets created.  Make sure this program works for you before coming to class on Day \ref{day:graphics1}.
+
+\pyfile{Testing the Graphics Module}{test-graphics.py}{testgraph}

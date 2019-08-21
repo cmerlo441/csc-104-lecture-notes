@@ -1,0 +1,57 @@
+\addvspace {10\p@ }
+\contentsline {xchapter}{Copyright}{iii}{chapter*.1}
+\addvspace {10\p@ }
+\contentsline {xchapter}{About These Notes}{xv}{chapter*.6}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Acknowledgments}{xvii}{chapter*.7}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Course Introduction}{3}{chapter.1}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Talking Like a Programmer}{9}{chapter.2}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Matrix Logic}{17}{chapter.3}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Systematic Lists}{23}{chapter.4}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Binary Numbers}{29}{chapter.5}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Introduction to Conditionals}{31}{chapter.6}
+\contentsline {tcolorbox}{\numberline {6.1}{\ignorespaces Relational Operators in Python}}{32}{table.6.1}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Nested Conditionals and Complex Conditonals}{33}{chapter.7}
+\contentsline {tcolorbox}{\numberline {7.1}{\ignorespaces And, Or, and Not Truth Tables}}{37}{table.7.1}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Debugging Conditionals}{39}{chapter.8}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Exam 1 Review}{41}{chapter.9}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Exam 1}{41}{chapter.10}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Introduction to Python}{45}{chapter.11}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Python Errors and zyLabs}{49}{chapter.12}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Variables and Expressions}{53}{chapter.13}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Modules}{57}{chapter.14}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Strings and Numeric Types, and Writing a First Python Script}{59}{chapter.15}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Tracing a Python Program}{63}{chapter.16}
+\addvspace {10\p@ }
+\contentsline {xchapter}{The \texttt {graphics.py} Module}{65}{chapter.17}
+\addvspace {10\p@ }
+\contentsline {xchapter}{The \texttt {graphics.py} Module, Day 2}{69}{chapter.18}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Exam 2 Review}{71}{chapter.19}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Exam 2}{71}{chapter.20}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Python Conditionals}{75}{chapter.21}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Introduction to Loops}{79}{chapter.22}
+\addvspace {10\p@ }
+\contentsline {xchapter}{IDLE}{83}{appendix.A}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Python Keywords}{87}{appendix.B}
+\contentsline {table}{\numberline {B.1}{\ignorespaces The Keywords of the Python Language\relax }}{87}{table.B.1}

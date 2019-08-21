@@ -1,0 +1,13 @@
+x = 1
+
+if x < 5:
+    print("Hello from the if statement!")
+    x += 1
+
+print("More stuff happens here.")
+
+while x < 5:
+    print("Hello from the while statement!")
+    x += 1
+
+print("More stuff happens here.")
