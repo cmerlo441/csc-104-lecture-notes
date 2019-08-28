@@ -1,9 +1,9 @@
 \contentsline {chapter}{Copyright}{iii}{chapter*.1}
-\contentsline {chapter}{List of Figures}{ix}{chapter*.2}
-\contentsline {chapter}{List of Code Examples}{xi}{chapter*.4}
-\contentsline {chapter}{List of Tables}{xiii}{chapter*.4}
-\contentsline {chapter}{About These Notes}{xv}{chapter*.6}
-\contentsline {chapter}{Acknowledgments}{xvii}{chapter*.7}
+\contentsline {chapter}{List of Figures}{xi}{chapter*.2}
+\contentsline {chapter}{List of Code Examples}{xiii}{chapter*.4}
+\contentsline {chapter}{List of Tables}{xv}{chapter*.4}
+\contentsline {chapter}{About These Notes}{xvii}{chapter*.6}
+\contentsline {chapter}{Acknowledgments}{xix}{chapter*.7}
 \contentsline {part}{I\hspace {1em}Problem Solving}{1}{part.1}
 \contentsline {chapter}{\numberline {1}Course Introduction}{3}{chapter.1}
 \contentsline {section}{\numberline {1.1}Course Strategies}{3}{section.1.1}
@@ -100,7 +100,10 @@
 \contentsline {subsection}{\numberline {17.1.1}Instantiating a Class With Additional Information}{66}{subsection.17.1.1}
 \contentsline {section}{\numberline {17.2}Modules Revisited}{66}{section.17.2}
 \contentsline {section}{\numberline {17.3}The \texttt {graphics.py} Module}{67}{section.17.3}
-\contentsline {chapter}{\numberline {18}The \texttt {graphics.py} Module, Day 2}{69}{chapter.18}
+\contentsline {chapter}{\numberline {18}When Graphics Goes Wrong!}{69}{chapter.18}
+\contentsline {section}{\numberline {18.1}When Graphics Goes Right}{69}{section.18.1}
+\contentsline {section}{\numberline {18.2}What Can Go Wrong?}{69}{section.18.2}
+\contentsline {subsection}{\numberline {18.2.1}User Input}{70}{subsection.18.2.1}
 \contentsline {chapter}{\numberline {19}Exam 2 Review}{71}{chapter.19}
 \contentsline {chapter}{\numberline {20}Exam 2}{71}{chapter.20}
 \contentsline {part}{III\hspace {1em}Intermediate Python Programming}{73}{part.3}
@@ -112,14 +115,28 @@
 \contentsline {subsubsection}{String Literals}{76}{subsection.21.2.1}
 \contentsline {subsubsection}{Displaying Output}{76}{subsection.21.2.1}
 \contentsline {subsection}{\numberline {21.2.2}Indentation}{76}{subsection.21.2.2}
-\contentsline {chapter}{\numberline {22}Introduction to Loops}{79}{chapter.22}
-\contentsline {section}{\numberline {22.1}Iteration}{79}{section.22.1}
-\contentsline {section}{\numberline {22.2}Syntax}{80}{section.22.2}
-\contentsline {chapter}{Appendices}{83}{section*.10}
-\contentsline {chapter}{\numberline {A}IDLE}{83}{appendix.A}
-\contentsline {section}{\numberline {A.1}Using IDLE}{83}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Windows}{83}{subsection.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Mac OS}{85}{subsection.A.1.2}
-\contentsline {subsection}{\numberline {A.1.3}Linux}{85}{subsection.A.1.3}
-\contentsline {chapter}{\numberline {B}Python Keywords}{87}{appendix.B}
-\contentsline {chapter}{Index}{89}{table.B.1}
+\contentsline {chapter}{\numberline {22}Writing an Interactive Graphics Program}{79}{chapter.22}
+\contentsline {section}{\numberline {22.1}Today's Activity}{79}{section.22.1}
+\contentsline {chapter}{\numberline {23}Python Functions}{81}{chapter.23}
+\contentsline {section}{\numberline {23.1}What Is a Function?}{81}{section.23.1}
+\contentsline {subsection}{\numberline {23.1.1}What Do Functions Do?}{82}{subsection.23.1.1}
+\contentsline {section}{\numberline {23.2}What Makes a Function Run?}{82}{section.23.2}
+\contentsline {section}{\numberline {23.3}How Can We Tailor a Function to Our Needs?}{82}{section.23.3}
+\contentsline {chapter}{\numberline {24}Tracing Python Functions}{83}{chapter.24}
+\contentsline {chapter}{\numberline {25}Validating User Input}{85}{chapter.25}
+\contentsline {section}{\numberline {25.1}Introduction to Loops}{85}{section.25.1}
+\contentsline {section}{\numberline {25.2}Iteration}{86}{section.25.2}
+\contentsline {section}{\numberline {25.3}Syntax}{86}{section.25.3}
+\contentsline {chapter}{\numberline {26}Graphics Programming Activity}{87}{chapter.26}
+\contentsline {chapter}{\numberline {27}Finite Loops and Collections}{89}{chapter.27}
+\contentsline {chapter}{\numberline {28}Traffic Light Activity}{91}{chapter.28}
+\contentsline {chapter}{\numberline {29}Exam 3 Review}{93}{chapter.29}
+\contentsline {chapter}{\numberline {30}Exam 3}{93}{chapter.30}
+\contentsline {chapter}{Appendices}{97}{section*.11}
+\contentsline {chapter}{\numberline {A}IDLE}{97}{appendix.A}
+\contentsline {section}{\numberline {A.1}Using IDLE}{97}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Windows}{97}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Mac OS}{99}{subsection.A.1.2}
+\contentsline {subsection}{\numberline {A.1.3}Linux}{99}{subsection.A.1.3}
+\contentsline {chapter}{\numberline {B}Python Keywords}{101}{appendix.B}
+\contentsline {chapter}{Index}{103}{table.B.1}

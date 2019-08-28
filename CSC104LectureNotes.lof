@@ -1,9 +1,9 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{Copyright}{iii}{chapter*.1}
 \addvspace {10\p@ }
-\contentsline {xchapter}{About These Notes}{xv}{chapter*.6}
+\contentsline {xchapter}{About These Notes}{xvii}{chapter*.6}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Acknowledgments}{xvii}{chapter*.7}
+\contentsline {xchapter}{Acknowledgments}{xix}{chapter*.7}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Course Introduction}{3}{chapter.1}
 \contentsline {tcolorbox}{\numberline {1.1}{\ignorespaces Typical Lecture Introduction Slide}}{4}{figure.1.1}
@@ -48,7 +48,7 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{The \texttt {graphics.py} Module}{65}{chapter.17}
 \addvspace {10\p@ }
-\contentsline {xchapter}{The \texttt {graphics.py} Module, Day 2}{69}{chapter.18}
+\contentsline {xchapter}{When Graphics Goes Wrong!}{69}{chapter.18}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Exam 2 Review}{71}{chapter.19}
 \addvspace {10\p@ }
@@ -56,11 +56,27 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{Python Conditionals}{75}{chapter.21}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Introduction to Loops}{79}{chapter.22}
+\contentsline {xchapter}{Writing an Interactive Graphics Program}{79}{chapter.22}
 \addvspace {10\p@ }
-\contentsline {xchapter}{IDLE}{83}{appendix.A}
-\contentsline {tcolorbox}{\numberline {A.1}{\ignorespaces IDLE Running on Windows 10}}{84}{figure.A.1}
-\contentsline {tcolorbox}{\numberline {A.2}{\ignorespaces IDLE Running on Windows 10 with the Fira Code Font}}{85}{figure.A.2}
-\contentsline {tcolorbox}{\numberline {A.3}{\ignorespaces IDLE Running on Ubuntu Linux}}{86}{figure.A.3}
+\contentsline {xchapter}{Python Functions}{81}{chapter.23}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Python Keywords}{87}{appendix.B}
+\contentsline {xchapter}{Tracing Python Functions}{83}{chapter.24}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Validating User Input}{85}{chapter.25}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Graphics Programming Activity}{87}{chapter.26}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Finite Loops and Collections}{89}{chapter.27}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Traffic Light Activity}{91}{chapter.28}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Exam 3 Review}{93}{chapter.29}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Exam 3}{93}{chapter.30}
+\addvspace {10\p@ }
+\contentsline {xchapter}{IDLE}{97}{appendix.A}
+\contentsline {tcolorbox}{\numberline {A.1}{\ignorespaces IDLE Running on Windows 10}}{98}{figure.A.1}
+\contentsline {tcolorbox}{\numberline {A.2}{\ignorespaces IDLE Running on Windows 10 with the Fira Code Font}}{99}{figure.A.2}
+\contentsline {tcolorbox}{\numberline {A.3}{\ignorespaces IDLE Running on Ubuntu Linux}}{100}{figure.A.3}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Python Keywords}{101}{appendix.B}

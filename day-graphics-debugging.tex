@@ -1,0 +1,19 @@
+% !TEX root = CSC104LectureNotes.tex
+
+\chapter{When Graphics Goes Wrong!}
+\label{day:graphics-debugging}
+
+\topquote{A computer is really just an instrument of expression, like a piano.  It's how you play it that resolves what value it has.}{Richard Taylor, the computer effects supervisor on the movie ``Tron''}
+
+\begin{note}{Get Your Work Finished}
+It is recommended that you have finished the colorful circles homework \textbf{\textit{before}} starting today's class.  It is further recommended that you refresh what you've learned about conditional statements, because you will be writing some in class today.
+\end{note}
+
+\section{When Graphics Goes Right}
+The code in yesterday's Code Example makes a nice circle on the screen, but that's largely because we chose some appropriate values for sizes, locations, and colors.  In a controlled environment, it's easy to make sure that a program will do what we expect.
+
+\section{What Can Go Wrong?}
+If, however, the point \mintinline{python}{p} wasn't placed at $(125, 125)$, but at $(300, 300)$, the program would not look the way we intend for it to look.  What if those coordinates were not typed into the program -- ``hard coded,'' as programmers would say -- the way you saw them yesterday, but entered by a user?  What if they were read in from a file?  What if we can't guarantee that the $x$ and $y$ values would fall between 0 and 249?  Today, we explore these scenarios, and how we might handle them.
+
+\subsection{User Input}
+One way that programmers make programs more interesting is by allowing the program's user to interact with it.  We do this by prompting for input, as you've seen before with the \mintinline{python}{input()} function.  Remember that users are not perfect, and asking for their input -- while necessary -- can lead to unexpected situations.  A successful programmer must be able to handle the unexpected.

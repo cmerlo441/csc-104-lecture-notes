@@ -1,0 +1,27 @@
+% !TEX root = CSC104LectureNotes.tex
+
+\chapter{Python Functions}
+\label{day:functions1}
+
+\topquote{Quote}{Attribution}
+
+\minitoc
+
+It is human nature to try to think about complex things in simple terms.  When someone says ``I made breakfast,'' we know that such an activity takes several steps, but there is value in being able to convey that meaning with such a short sentence.
+
+\section{What Is a Function?}
+
+Chapter 5 of zyBooks defines a \addindex{Function}{function} as ``\dots a named series of statements.''  It is considered good programming practice to collect within a function a series of statements that performs a certain task, like calculating the area of a bedroom, or displaying a summary of the user's inputs.  It is also considered good programming practice to make sure that a function \textit{only performs one task}.  For instance, a function that calculates the area of a bedroom, stores the area in a variable, and displays the area to the screen should probably be rewritten as two functions -- one that calculates and stores, and one that displays.  This use of \addindex{Modularity}{modularity} -- breaking a large solution down into parts -- makes complex programs easier to design, because you can assemble the small code segments you wish to use in an order that makes sense to you.
+
+\subsection{What Do Functions Do?}
+Some functions are designed to make interesting things appear on the screen.  Some programmers use the term ``output functions'' to describe these. Other functions are used to make certain values get stored in certain variables.  We will discuss both types in class.
+
+\section{What Makes a Function Run?}
+
+The code inside a function won't run until it is called.  A \addindex{Function!Call}{function call} is code we write in one part of a prorgram to say we want code in a different part of a program to run.  A function call must include the name of the function that needs to run, and possibly other information as well, depending on the function being called.
+
+When the \textit{caller} calls the function, the program's \textit{flow of control} passes to the function.  When the function is done running, flow of control passes back to the caller, and the code that appears after the function call runs next.
+
+\section{How Can We Tailor a Function to Our Needs?}
+
+A function that always calculates the area of the same bedroom would probably be of limited use to most programmers.  If we could tell the function the lengths of the walls each time we call it, however, we could then reuse the same function many times to calculate the size of many different bedrooms.  This idea, of sending different data to the same function to perform the same kind of calculation is referred to as the passing of \addindex{Function!Parameters}{parameters}.  For instance, we might call the function once and provide the parameters 10 and 8 (for a bedroom that measures ten feet by eight feet), and call it the next time with the parameters 9 and 12.  Each call would \textit{perform the same task} even though the answer the first time is 80 and the second time is 108.

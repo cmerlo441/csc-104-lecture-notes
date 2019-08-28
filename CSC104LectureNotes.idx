@@ -53,7 +53,11 @@
 \indexentry{Module|hyperpage}{66}
 \indexentry{Import|hyperpage}{66}
 \indexentry{Dot operator|hyperpage}{66}
-\indexentry{Statement!Loop|hyperpage}{80}
-\indexentry{IDLE|hyperpage}{83}
-\indexentry{Reserved words|hyperindexformat{\see {Keywords}}}{87}
-\indexentry{Keywords|hyperpage}{87}
+\indexentry{Function|hyperpage}{81}
+\indexentry{Modularity|hyperpage}{81}
+\indexentry{Function!Call|hyperpage}{82}
+\indexentry{Function!Parameters|hyperpage}{82}
+\indexentry{Statement!Loop|hyperpage}{86}
+\indexentry{IDLE|hyperpage}{97}
+\indexentry{Reserved words|hyperindexformat{\see {Keywords}}}{101}
+\indexentry{Keywords|hyperpage}{101}

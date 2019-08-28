@@ -1,0 +1,41 @@
+% !TEX root = CSC104LectureNotes.tex
+
+\chapter{Validating User Input}
+
+\topquote{Something.}{Someone}
+
+\minitoc
+
+On Day \ref{day:interactive-graphics} we wrote a program that asked for user input, and quit if the input was invalid.  You are probably aware that real-world programs don't -- or at least shouldn't -- respond this way.  It would be much more user-friendly if our program could give the user another chance instead of just exiting.  Today we will learn a good technique for making this happen.
+
+\section{Introduction to Loops}
+
+In Section \ref{sec:threekinds} of these notes, you learned that there are three fundamental kinds of computer statements: sequential statements, selection statements, and iteration statements.  It is now time to learn about the last of these.
+
+\section{Iteration}
+
+One of the first goals of computer designers, even going back to Sir Charles Babbage,\footnote{\url{https://www.computerhistory.org/babbage/charlesbabbage/}} was that they would make life simpler by doing the sort of tasks that we humans didn't want to do.  In Chapter 4 of zyBooks, you will learn how Python makes it easy for us to tell the computer to automate certain tasks.
+
+\section{Syntax}
+
+Take care to notice that the syntax of a \addindex{Statement!Loop}{loop statement} is similar to that of a conditional statement: there's a keyword, a condition, a colon, and then a bunch of indented lines.  See these examples:
+
+\begin{py}{If Statements and While Statements}{if-and-while}
+x = 1
+
+if x < 5:
+    print("Hello from the if statement!")
+    x += 1
+
+print("More stuff happens here.")
+
+while x < 5:
+    print("Hello from the while statement!")
+    x += 1
+
+print("More stuff happens here.")
+\end{py}
+
+There's a big difference between the \mintinline{py}{if} statement and the \mintinline{py}{while} statement, however.  The body of the \mintinline{py}{if} statement runs at most once, but the body of the \mintinline{py}{while} loop will keep repeating as long as the condition is true.
+
+Before class, see if you can determine what the outcome of this program will be, and then type it in and run it to see if you were right.
