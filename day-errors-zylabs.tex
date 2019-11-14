@@ -40,8 +40,8 @@ A \addindex{Error!Runtime error}{runtime error} is caused by a situation that th
 Consider this Python code that we looked at at the end of Day \ref{day:python1}:
 
 \begin{minted}{python}
-myNumber = int(input('Type in a number: '))
-print(myNumber * 3)
+my_number = int(input('Type in a number: '))
+print(my_number * 3)
 \end{minted}
 
 That Python program is free of syntax errors, and will run just fine as long as the user interacts with it in an expected way.  However, if you run the program and type \texttt{Idaho} instead of a number, the \mintinline{python}{int()} function won't be able to complete its job.  Python will respond with this error message:

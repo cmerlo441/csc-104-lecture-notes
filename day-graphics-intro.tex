@@ -20,7 +20,7 @@ Imagine that we have defined a class called \mintinline{py}{Pizza}.  The code in
 Creating an instance of the \mintinline{py}{Pizza} class -- an action programmers like to refer to as ``instantiating a \mintinline{py}{Pizza}'' -- is quite easy:
 
 \begin{minted}{python}
-myFirstPizza = Pizza()
+my_first_pizza = Pizza()
 \end{minted}
 
 Notice that the class is called \mintinline{py}{Pizza}, and so we call the \mintinline{py}{Pizza()} function to instantiate it.
@@ -30,7 +30,7 @@ Notice that the class is called \mintinline{py}{Pizza}, and so we call the \mint
 Not everyone eats plain pizza.  If the \mintinline{py}{Pizza} class provides the functionality, you can specify the options you want when you instantiate it:
 
 \begin{minted}{python}
-myAwesomePizza = Pizza(pepperoni, sausage)
+my_awesome_pizza = Pizza(pepperoni, sausage)
 \end{minted}
 
 \section{Modules Revisited}
@@ -42,7 +42,7 @@ Let's say our \mintinline{python}{Pizza} class exists in a module called \texttt
 \begin{minted}{python}
 import food
 
-myFirstPizza = Pizza()  # this isn't going to work
+my_first_pizza = Pizza()  # this isn't going to work
 \end{minted}
 
 The reason that Line 3 isn't going to work is because we have to specify where the \mintinline{python}{Pizza()} function comes from.  We can fix that example's syntax using the \addindex{Dot operator}{dot operator}:
@@ -50,7 +50,7 @@ The reason that Line 3 isn't going to work is because we have to specify where t
 \begin{minted}{python}
 import food
 
-myFirstPizza = Pizza.Pizza()  # now this works
+my_first_pizza = Pizza.Pizza()  # now this works
 \end{minted}
 
 The dot operator is also sometimes called the \textit{scope resolution operator}, because it helps the Python interpreter to resolve where it's supposed to find the \mintinline{python}{Pizza()} function.  The dot operator always tells Python that the item after it is a feature of the item before it -- in this case, \mintinline{python}{Pizza()} (the function) belongs to \mintinline{python}{Pizza} (the class).
@@ -60,7 +60,7 @@ This is fine, but it makes code take longer to type.  Frequently, programmers us
 \begin{minted}{python}
 from food import Pizza
 
-myFirstPizza = Pizza()  # this works now
+my_first_pizza = Pizza()  # this works now
 \end{minted}
 
 The \mintinline{python}{from ... import ...} syntax adds the class at the end of the statement to the local script's scope, so that we can call its functions without using the class name and the dot operator.

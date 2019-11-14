@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  27 AUG 2019 10:46
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  14 OCT 2019 14:22
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -2983,7 +2983,7 @@ Underfull \vbox (badness 2521) has occurred while \output is active []
  (./_minted-CSC104LectureNotes/A97C0AFFB458A65D8682BF0A48F36E63A1496615DFCB23345383BA4E0CD3BAB4.pygtex)
 \openout7 = `CSC104LectureNotes.pyg'.
 
- (./_minted-CSC104LectureNotes/E5BBBF0B62AB7A30D18D162B45A51CB4A1496615DFCB23345383BA4E0CD3BAB4.pygtex)
+ (./_minted-CSC104LectureNotes/8C908A75F7DD64DA4948AE5E8F54DACDA1496615DFCB23345383BA4E0CD3BAB4.pygtex)
 \openout9 = `CSC104LectureNotes.pyg'.
 
  (./_minted-CSC104LectureNotes/02D337C54A4330EFC00757D1FB2F32E0A1496615DFCB23345383BA4E0CD3BAB4.pygtex)
@@ -3242,7 +3242,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
  (./_minted-CSC104LectureNotes/728174595EB060722507F7D3A007B55AE9BBB78B5BC2269DEA6AB6C62EBF9819.pygtex)
 \openout7 = `CSC104LectureNotes.pyg'.
 
- (./_minted-CSC104LectureNotes/51A8E91A8BE9C5CA65779B3CCFC35E00A1496615DFCB23345383BA4E0CD3BAB4.pygtex)
+ (./_minted-CSC104LectureNotes/397FC52D6DA5C4B80CFC42B92CE23A99A1496615DFCB23345383BA4E0CD3BAB4.pygtex)
 \openout9 = `CSC104LectureNotes.pyg'.
 
  (./_minted-CSC104LectureNotes/728174595EB060722507F7D3A007B55AE9BBB78B5BC2269DEA6AB6C62EBF9819.pygtex)
@@ -3254,7 +3254,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
  (./_minted-CSC104LectureNotes/728174595EB060722507F7D3A007B55AE9BBB78B5BC2269DEA6AB6C62EBF9819.pygtex)
 \openout7 = `CSC104LectureNotes.pyg'.
 
- (./_minted-CSC104LectureNotes/FE2A69FFC46A0C29EE24FA6471ED3C42A1496615DFCB23345383BA4E0CD3BAB4.pygtex)
+ (./_minted-CSC104LectureNotes/EF386BB8E6879276E9025145D0C8FA87A1496615DFCB23345383BA4E0CD3BAB4.pygtex)
 \openout9 = `CSC104LectureNotes.pyg'.
 
  (./_minted-CSC104LectureNotes/728174595EB060722507F7D3A007B55AA1496615DFCB23345383BA4E0CD3BAB4.pygtex)
@@ -3263,13 +3263,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
  (./_minted-CSC104LectureNotes/728174595EB060722507F7D3A007B55AE9BBB78B5BC2269DEA6AB6C62EBF9819.pygtex)
 \openout7 = `CSC104LectureNotes.pyg'.
 
- (./_minted-CSC104LectureNotes/A6DA499C247304D4129C540011BB1534A1496615DFCB23345383BA4E0CD3BAB4.pygtex)
+ (./_minted-CSC104LectureNotes/ED8E102382E8E8E88201053AB0150DE4A1496615DFCB23345383BA4E0CD3BAB4.pygtex)
 \openout9 = `CSC104LectureNotes.pyg'.
 
  (./_minted-CSC104LectureNotes/23939A6FDD222BC1CA0BCB36A9B15838A1496615DFCB23345383BA4E0CD3BAB4.pygtex)
 \openout7 = `CSC104LectureNotes.pyg'.
 
- (./_minted-CSC104LectureNotes/74C7DC97EBB8412B9D0AE1F35DDD1734A1496615DFCB23345383BA4E0CD3BAB4.pygtex)
+ (./_minted-CSC104LectureNotes/21FB9C96DD56F381E6D7A9C67585D013A1496615DFCB23345383BA4E0CD3BAB4.pygtex)
 \openout9 = `CSC104LectureNotes.pyg'.
 
  (./_minted-CSC104LectureNotes/23939A6FDD222BC1CA0BCB36A9B15838A1496615DFCB23345383BA4E0CD3BAB4.pygtex)
@@ -3291,7 +3291,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  (./_minted-CSC104LectureNotes/451C6F6F942EBA07F20DE1721BE74002E9BBB78B5BC2269DEA6AB6C62EBF9819.pygtex)
 \openout7 = `CSC104LectureNotes.pyg'.
 
- (./_minted-CSC104LectureNotes/AFCA41076EF436E1B7C479E69FC8A376A1496615DFCB23345383BA4E0CD3BAB4.pygtex)
+ (./_minted-CSC104LectureNotes/C4861F227BF901DAC213280FD977954DA1496615DFCB23345383BA4E0CD3BAB4.pygtex)
 \openout9 = `CSC104LectureNotes.pyg'.
 
  (./_minted-CSC104LectureNotes/E6BDAE04E90A2965F86C59A148AFA746A1496615DFCB23345383BA4E0CD3BAB4.pygtex)
@@ -3502,21 +3502,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [82]
 Day 24.
-
-Underfull \hbox (badness 10000) in paragraph at lines 6--6
-  
- []
-
-
-Overfull \hbox (1.0pt too wide) in paragraph at lines 6--7
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6--7
-
- []
-
 Package minitoc Info: I0006
 (minitoc)             CSC104LectureNotes.mtc30 is empty on input line 9.
 ) (./day-validating-input.tex [83
@@ -3532,29 +3517,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 ]
 Day 25.
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--5
-  
- []
-
-
-Overfull \hbox (1.0pt too wide) in paragraph at lines 5--6
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
-
- []
-
 \openout3 = `CSC104LectureNotes.mtc'.
 
 \openout3 = `CSC104LectureNotes.mtc'.
 
-(./CSC104LectureNotes.mtc31)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [85]
+(./CSC104LectureNotes.mtc31) [85]
 \openout5 = `CSC104LectureNotes.listing'.
 
  (./_minted-CSC104LectureNotes/1F0ECEC8FCD8BD4F83721460BD319E0004283CB680E1DB9810F8A3843E61BFFD.pygtex)
@@ -3783,7 +3750,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 424.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 424.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 424.
 Package rerunfilecheck Info: File `CSC104LectureNotes.out' has not changed.
-(rerunfilecheck)             Checksum: 06FBC8E846C862374EB32F7A720B91AB.
+(rerunfilecheck)             Checksum: 118E59401F8934580011FBC8C76C5C42.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -3797,7 +3764,7 @@ runsystem(rm CSC104LectureNotes.pyg)...executed.
 Here is how much of TeX's memory you used:
  49571 strings out of 492970
  1000917 string characters out of 6133938
- 1226172 words of memory out of 5000000
+ 1226194 words of memory out of 5000000
  52098 multiletter control sequences out of 15000+600000
  554580 words of font info for 146 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

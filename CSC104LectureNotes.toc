@@ -30,7 +30,7 @@
 \contentsline {section}{\numberline {2.4}Programming Ethics}{14}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}General Principles}{14}{subsection.2.4.1}
 \contentsline {section}{\numberline {2.5}Writing and Following Directions Exercise}{14}{section.2.5}
-\contentsline {section}{\numberline {2.6}Homework}{14}{section.2.6}
+\contentsline {section}{\numberline {2.6}Homework for Day 3}{14}{section.2.6}
 \contentsline {chapter}{\numberline {3}Matrix Logic}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}What Is Matrix Logic?}{17}{section.3.1}
 \contentsline {section}{\numberline {3.2}Example Matrix Problem}{17}{section.3.2}
@@ -125,7 +125,7 @@
 \contentsline {chapter}{\numberline {24}Tracing Python Functions}{83}{chapter.24}
 \contentsline {chapter}{\numberline {25}Validating User Input}{85}{chapter.25}
 \contentsline {section}{\numberline {25.1}Introduction to Loops}{85}{section.25.1}
-\contentsline {section}{\numberline {25.2}Iteration}{86}{section.25.2}
+\contentsline {section}{\numberline {25.2}Iteration}{85}{section.25.2}
 \contentsline {section}{\numberline {25.3}Syntax}{86}{section.25.3}
 \contentsline {chapter}{\numberline {26}Graphics Programming Activity}{87}{chapter.26}
 \contentsline {chapter}{\numberline {27}Finite Loops and Collections}{89}{chapter.27}
